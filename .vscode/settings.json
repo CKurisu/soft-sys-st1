@@ -1,0 +1,28 @@
+{
+    "fileHeaderComment.parameter": {
+        "*": {
+            "commentbegin": "/*",
+            "commentprefix": " *",
+            "commentend": " */",
+            "name": "Develop Site",
+            "header": "Developed with Bootstrap",
+            "autor": "SoftSystem, LTD.",
+            "version": "@version   v1.0.1",
+            "copy": "@autor   (c) 2013 - SoftSystem, LTD. All rights reserved.",
+            "licence": "@licence   Licensed under the MIT license."
+        }
+    },
+    "fileHeaderComment.template": {
+        "*": [
+            "${commentbegin}",
+            "${commentprefix} ${name}",
+            "${commentprefix} ${header}",
+            "${commentprefix}",
+            "${commentprefix} ${version}, Created on ${date} ${time}",
+            "${commentprefix} ${autor}",
+            "${commentprefix} ${copy}",
+            "${commentprefix} ${licence}",
+            "${commentend}"
+        ]
+    }
+}

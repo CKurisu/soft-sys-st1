@@ -14,7 +14,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
-	<!-----					COMIENZA DECLARACIÓN DE CLASES, JS Y CSS					----->
+	<!-----					COMIENZA DECLARACIï¿½N DE CLASES, JS Y CSS					----->
 	<head>
 		<?php	include("head_gen.php");	?>
 		<link rel="stylesheet" href="css/estilo_index.css" type="text/css" media="screen" />
@@ -62,10 +62,11 @@
 										document.location="directores/index.php?tp=0";
 									</script>';
 								}
-								else if($rs_usu["lvl"]==2)		//SECRETARÍAS
+								else if($rs_usu["lvl"]==2)		//SECRETARï¿½AS
 								{
+									$_SESSION['tp']=1;
 									echo '<script type="text/javascript">
-										document.location="administrativo/index.php?tp=1";
+										document.location="administrativo/index.php";
 									</script>';
 								}
 								else if($rs_usu["lvl"]==3)		//CONTABILIDAD

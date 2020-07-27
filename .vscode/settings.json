@@ -3,7 +3,10 @@
         "*": {
             "commentbegin": "/*",
             "commentprefix": " *",
-            "commentend": " */",
+            "commentend": "*/",
+            "commentbeginht": "<!--",
+            "commentprefixht": " --",
+            "commentendht": "-->",
             "name": "Develop Site",
             "header": "Developed with Bootstrap",
             "autor": "SoftSystem, LTD.",
@@ -23,6 +26,17 @@
             "${commentprefix} ${copy}",
             "${commentprefix} ${licence}",
             "${commentend}"
-        ]
+        ],
+        "html": [
+            "${commentbeginht}",
+            "${commentprefixht} ${name}",
+            "${commentprefixht} ${header}",
+            "${commentprefixht}",
+            "${commentprefixht} ${version}, Created on ${date} ${time}",
+            "${commentprefixht} ${autor}",
+            "${commentprefixht} ${copy}",
+            "${commentprefixht} ${licence}",
+            "${commentendht}"
+        ],
     }
 }

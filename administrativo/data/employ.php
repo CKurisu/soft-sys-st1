@@ -78,8 +78,8 @@
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-user-edit"></i></a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-user-times"></i></a></td>
        	</tr>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
@@ -94,8 +94,8 @@
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-user-edit"></i></a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-user-times"></i></a></td>
        	</tr>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
@@ -110,8 +110,8 @@
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-user-edit"></i></a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-user-times"></i></a></td>
        	</tr>
 		<!-- <?php
 			$x=0;

@@ -1,12 +1,13 @@
 <?php	session_start();	?>
-<!-----------------------------------------------------------
------													-----
------		LIDER DE PROYECTO: SAUL ARROYO G.			-----
------		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	-----
------		ThE SaG Corp								-----
------		INDEX										-----
------													-----
------------------------------------------------------------->
+<!--
+ -- Develop Site
+ -- Developed with Bootstrap
+ --
+ -- @version   v1.0.1, Created on Mon Jul 27 2020 18:21:27
+ -- SoftSystem, LTD.
+ -- @autor   (c) 2013 - SoftSystem, LTD. All rights reserved.
+ -- @licence   Licensed under the MIT license.
+-->
 <?php
 	include("../cnx.php");
 	$sag=cnx();

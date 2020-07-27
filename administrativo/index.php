@@ -59,7 +59,7 @@
 							switch($_GET["tp"])
 							{
 								case 1:
-									echo 'Lista de Alumnos';
+									echo 'Lista de Departamentos';
 								break;
 								case 2:
 									echo 'Nuevo Alumno';
@@ -78,7 +78,7 @@
 						switch($_GET["tp"])
 						{
 							case 1:
-								include("alu_lista.php");
+								include("data/departament.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");

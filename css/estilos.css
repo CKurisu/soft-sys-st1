@@ -1,0 +1,104 @@
+/************************************************************
+*****													*****
+*****		LIDER DE PROYECTO: SAUL ARROYO G.			*****
+*****		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	*****
+*****		ThE SaG Corp								*****
+*****		ESTILOS GENERALES							*****
+*****													*****
+************************************************************/
+
+/***********************************************/
+/***************     BODY     ***************/
+/***********************************************/
+body
+{
+	font-family: "sans";
+}
+
+/***********************************************/
+/***************     FUENTES     ***************/
+/***********************************************/
+@font-face
+{
+	font-family: "sans";
+	src: url(../fuentes/sans.woff2);
+}
+@font-face
+{
+	font-family: "quesha";
+	src: url(../fuentes/quesha.ttf);
+}
+@font-face
+{
+	font-family: "monterey";
+	src: url(../fuentes/monterey.ttf);
+}
+@font-face
+{
+	font-family: "sweetly";
+	src: url(../fuentes/sweetly.ttf);
+}
+
+/************************************************/
+/***************     ESPACIOS     ***************/
+/************************************************/
+.espacio-30	{	margin-bottom: 30px;	}
+.espacio-50	{	margin-bottom: 50px;	}
+.espacio-100{	margin-bottom: 100px;	}
+.espacio-15p{	margin-top: 15%;	}
+
+/***********************************************/
+/***************     BOTONES     ***************/
+/***********************************************/
+.btn
+{
+	border-radius: 3px;
+	border: 0px;
+	padding: 10px;
+	color: #fff;
+}
+
+.btn-tbl
+{
+	float: right;
+	margin-bottom: 15px;
+	margin-right: 10%;
+}
+
+/********************/
+/*****   AZUL   *****/
+/********************/
+.btn.azul{	background: #01b18a;	}
+.btn.azul:hover{	background: #2b6688;color: #fff;	}
+
+/*********************/
+/*****   VERDE   *****/
+/*********************/
+.btn.verde{	background: #45a824;	}
+.btn.verde:hover{	background: #347e1b;color: #fff;	}
+
+/*********************/
+/*****   ROJO   *****/
+/*********************/
+.btn.rojo{	background: #d22d2d;	}
+.btn.rojo:hover{	background: #931f1f;color: #fff;	}
+
+/*********************/
+/*****   CAFE   *****/
+/*********************/
+.btn.cafe{	background: #e6b319;	}
+.btn.cafe:hover{	background: #a17d12;color: #fff;	}
+
+/**********************************************/
+/***************     TABLAS     ***************/
+/**********************************************/
+.tab_td{	background: #ffffff;	}
+.tab_td:hover{	background: #ced8e4;	}
+.tab_centrar{	text-align: center;		}
+.tab_tr
+{
+	border:1px  #000000 solid;
+	background: #273444;
+	text-align: center;
+	color: #ffffff;
+}

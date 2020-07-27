@@ -1,0 +1,38 @@
+/************************************************************
+*****													*****
+*****		LIDER DE PROYECTO: SAUL ARROYO G.			*****
+*****		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	*****
+*****		ThE SaG Corp								*****
+*****		ESTILOS DE INDEX							*****
+*****													*****
+************************************************************/
+.fondo
+{
+	background: #d2d6de;
+}
+
+.Cuadrito
+{
+	width: 350px;
+	/*height: 200px;*/
+	background: #002a3a;
+	padding: 30px;
+}
+
+.textos
+{
+	width: 95%;
+	border-radius: 5px;
+	padding:5px 10px;
+}
+
+.ini_encabezado{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.titulo{
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+}

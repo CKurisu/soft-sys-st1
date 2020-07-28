@@ -59,7 +59,7 @@
 							switch($_SESSION['tp'])
 							{
 								case 1:
-									echo 'Lista de Intermediarios';
+									echo 'Lista de Clientes';
 								break;
 								case 2:
 									echo 'Nuevo Alumno';
@@ -78,7 +78,7 @@
 						switch($_SESSION['tp'])
 						{
 							case 1:
-								include("data/client-bet.php");
+								include("data/client.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");

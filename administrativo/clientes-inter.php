@@ -78,7 +78,7 @@
 						switch($_SESSION['tp'])
 						{
 							case 1:
-								include("data/client.php");
+								include("data/client-bet.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");

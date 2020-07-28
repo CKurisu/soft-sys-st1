@@ -48,6 +48,7 @@
 	<thead>
 		<tr class="tab_tr">
 			<th scope="col" class="tab_centrar">ID</th>
+            <th scope="col" class="tab_centrar">Estatus</th>
 			<th scope="col" class="tab_centrar">Laboratorio</th>
 			<th scope="col" class="tab_centrar">Nombre</th>
 			<th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
@@ -62,9 +63,10 @@
        <tbody>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
-       		<td class="tab_centrar"></td>
+       		<td class="tab_centrar"><span class="label label-success">Activo</span></td>
             <td class="tab_centrar"></td>
-			<td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>

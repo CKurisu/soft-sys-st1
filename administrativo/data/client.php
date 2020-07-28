@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<!-- <table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover">
 	<thead>
 		<tr class="tab_tr">
 			<th scope="col" class="tab_centrar">Activo</th>
@@ -103,19 +103,4 @@
 			include("alu_modificar.php");*/
 		?>
 	</tbody>
-</table> -->
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<p class="text-center text-blacked-bold" role="separator"><i class="glyphicon glyphicon-check"></i> Equipo</p>
-<hr role="separator" class="divider">
-<div class="table">
-<table class="table table-condensed table-hover">
-<thead><tr>
-        <th class="text-center">#</th>
-        <td class="text-center">#</td>        
-    <tbody>
-        <tr style="">
-            
-        </tr>
-    </tbody>
 </table>
-</

@@ -3,43 +3,62 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Agrega nueva persona</h4>
+				<h4 class="modal-title" id="myModalLabel">Agregar nuevo empelado</h4>
 			</div>
-                    <form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
-				<div class="modal-body">
-					<div class="form-group col-sm-6">
-						<label>Matr&iaucte;cula</label>
-						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="Matr&iacute;cula" />
-					</div>
-					<div class="form-group col-sm-6">
-						<label>Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" />
-					</div>
-					<div class="form-group col-sm-6">
-						<label>Apellido Paterno</label>
-						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Apellido Paterno" />
-					</div>
-					<div class="form-group col-sm-6">
-						<label>Apellido Materno</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
-					</div>
-					<div class="form-group col-sm-6">
-						<label>Email</label>
-						<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electrónico" />
-					</div> 
-					<div class="form-group col-sm-6">
-						<label>Semestre</label>
-						<input type="text" name="semestre" id="semestre" class="form-control" placeholder="Semestre" />
-					</div>
-					<div class="form-group col-sm-6">
-						<label>Beca</label>
-						<input type="text" name="beca" id="beca" class="form-control" placeholder="Beca" />%
-					</div>
+			<div class="modal-body">
+				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<div class="form-group col-sm-4">
+					<label>Apellido Paterno</label>
+					<input type="text" name="matricula" id="matricula" class="form-control" placeholder="" />
 				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Dar de Alta</button>        
+				<div class="form-group col-sm-4">
+					<label>Apellido Materno</label>
+					<input type="text" name="nombre" id="nombre" class="form-control" placeholder="" />
 				</div>
-			</form>
+				<div class="form-group col-sm-4">
+					<label>Nombre(s)</label>
+					<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>Puesto</label>
+					<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>Departamento</label>
+					<input type="text" name="correo" id="correo" class="form-control" placeholder="" />
+				</div> 
+				<div class="form-group col-sm-4">
+					<label>Estado</label><div><span class="label label-success">Activo</span></div><br />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>RFC</label>
+					<input type="text" name="beca" id="beca" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>CURP</label>
+					<input type="text" name="beca" id="beca" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>IMSS</label>
+					<input type="text" name="beca" id="beca" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>Direccion</label>
+					<textarea type="text" name="beca" id="beca" class="form-control" placeholder="" /></textarea>
+				</div>
+				<div class="form-group col-sm-4">
+					<label>Tel&eacute;fono</label>
+					<input type="text" name="beca" id="beca" class="form-control" placeholder="" />
+				</div>
+				<div class="form-group col-sm-4">
+					<label>Correo Electr&oacute;nico</label>
+					<input type="text" name="beca" id="beca" class="form-control" placeholder="" />
+				</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3"><button class="btn btn-block" type="submit" style="font-size: 1.5em;">Registrar</button></div>        
+			</div>
 		</div>
 	</div>
 </div>
@@ -63,7 +82,7 @@
 		</tr>
 	</thead>
 	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
-            id="nuevoAlumno"><i class="fa fa-plus"></i></button>
+            id="nuevoAlumno"><i class="fas fa-user-plus"></i></button>
        <tbody>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>

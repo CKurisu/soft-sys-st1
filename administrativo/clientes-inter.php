@@ -59,7 +59,7 @@
 							switch($_SESSION['tp'])
 							{
 								case 1:
-									echo 'Lista de Clientes';
+									echo 'Lista de Intermediarios';
 								break;
 								case 2:
 									echo 'Nuevo Alumno';

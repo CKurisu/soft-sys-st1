@@ -47,12 +47,12 @@
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr class="tab_tr">
-			<th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
+			<th scope="col" class="tab_centrar">ID</th>
 			<th scope="col" class="tab_centrar">Laboratorio</th>
 			<th scope="col" class="tab_centrar">Nombre</th>
-			<th scope="col" class="tab_centrar">Correo</th>
-			<th scope="col" class="tab_centrar">Direcci&oacute;n</th>
-			<th scope="col" class="tab_centrar">Telefono(s)</th>
+			<th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
+			<th scope="col" class="tab_centrar">Nombre</th>
+			<th scope="col" class="tab_centrar"></th>
 			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>

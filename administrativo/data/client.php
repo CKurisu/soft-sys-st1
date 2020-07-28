@@ -47,13 +47,12 @@
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr class="tab_tr">
-			<th scope="col" class="tab_centrar">Activo</th>
-			<th scope="col" class="tab_centrar">ID Departamento</th>
-			<th scope="col" class="tab_centrar">Departamento</th>
-			<th scope="col" class="tab_centrar">Creado por</th>
-			<th scope="col" class="tab_centrar">Fecha creaci&oacute;n</th>
-			<th scope="col" class="tab_centrar">Actualizado por</th>
-			<th scope="col" class="tab_centrar">Fecha actualizaci&oacute;n</th>
+			<th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
+			<th scope="col" class="tab_centrar">Laboratorio</th>
+			<th scope="col" class="tab_centrar">Nombre</th>
+			<th scope="col" class="tab_centrar">Correo</th>
+			<th scope="col" class="tab_centrar">Direcci&oacute;n</th>
+			<th scope="col" class="tab_centrar">Telefono(s)</th>
 			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
@@ -63,8 +62,7 @@
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
        		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+			<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>

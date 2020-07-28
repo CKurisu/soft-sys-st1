@@ -52,7 +52,8 @@
 			<th scope="col" class="tab_centrar">Nombre</th>
 			<th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
 			<th scope="col" class="tab_centrar">Nombre</th>
-			<th scope="col" class="tab_centrar"></th>
+			<th scope="col" class="tab_centrar">Creado por</th>
+            <th scope="col" class="tab_centrar">Actulizado por</th>
 			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
@@ -62,6 +63,7 @@
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
        		<td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
 			<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>

@@ -10,6 +10,7 @@
 <?php
 	include("cnx.php");
 	$sag = cnx();
+	//hola mundo 
 ?>
 
 <!DOCTYPE html>

@@ -3,10 +3,40 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h3 class="modal-title" id="myModalLabel">Cliente</h3>
+				<h3 class="modal-title" id="myModalLabel">Cliente informe</h3>
 			</div>
                     <form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
 				<div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr class="tab_tr">
+                                    <th scope="col" class="tab_centrar">ID</th>
+                                    <th scope="col" class="tab_centrar">Estatus</th>
+                                    <th scope="col" class="tab_centrar">Laboratorio</th>
+                                    <th scope="col" class="tab_centrar">Nombre</th>
+                                    <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
+                                    <th scope="col" class="tab_centrar">Nombre</th>
+                                    <th scope="col" class="tab_centrar">Creado por</th>
+                                    <th scope="col" class="tab_centrar">Actulizado por</th>
+                                    <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tab_td">
+                                    <th scope="row" class="tab_centrar"></th>
+                                    <td class="tab_centrar"><span class="label label-success">Activo</span></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"></td>
+                                    <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i></a></td>
+                                    <td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a></td>
+                                </tr>
+                        </table>
+                    </div>
 					<div class="row">
 						<div class="form-group col-md-3">
 							<label>ID Cliente</label>

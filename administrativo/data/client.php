@@ -1,42 +1,52 @@
  <div class="modal fade" id="Nuevomodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
- <div class="modal-dialog modal-sm" role="document">
+ <div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Agrega nueva persona</h4>
+				<h3 class="modal-title" id="myModalLabel">Cliente</h3>
 			</div>
                     <form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
 				<div class="modal-body">
-					<div class="form-group">
-						<label>Matr&iaucte;cula</label>
-						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="Matr&iacute;cula" />
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
 					</div>
-					<div class="form-group">
-						<label>Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" />
-					</div>
-					<div class="form-group col-md-3">
-						<label>Apellido Paterno</label>
-						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Apellido Paterno" />
-					</div>
-					<div class="form-group col-md-3">
-						<label>Apellido Materno</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
-					</div>
-					<div class="form-group col-md-3">
-						<label>Email</label>
-						<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electrónico" />
-					</div> 
-					<div class="form-group col-md-3">
-						<label>Semestre</label>
-						<input type="text" name="semestre" id="semestre" class="form-control" placeholder="Semestre" />
-					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Nombre Cliente</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Nombre Cliente" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Intermediario</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Intermediario" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Estado</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Estado" />
+						</div> 
+						<div class="form-group col-md-3">
+							<label>Tipo Cliente</label>
+							<select class="form-control" name="semestre" id="semestre">
+								<option>--</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Guardar</button>
+					<button type="submit" class="btn btn-success" id="guardarnuevo">Guardar</button>
 					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Eliminar</button>
+					<button type="submit" class="btn btn-warning" id="guardarnuevo">Eliminar</button>
 				</div>
 			</form>
 		</div>

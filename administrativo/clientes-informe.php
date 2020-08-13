@@ -79,7 +79,7 @@
 						switch($_SESSION['tp'])
 						{
 							case 1:
-								include("data/employ.php");
+								include("data/clients-report.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");

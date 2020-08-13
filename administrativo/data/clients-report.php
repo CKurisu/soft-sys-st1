@@ -1,7 +1,4 @@
 
-			<div class="modal-header">
-				<h3 class="modal-title" id="myModalLabel">Cliente informe</h3>
-			</div>
 				<div class="modal-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">

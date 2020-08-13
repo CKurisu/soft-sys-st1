@@ -15,29 +15,28 @@
 						<label>Nombre</label>
 						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" />
 					</div>
-					<div class="form-group">
+					<div class="form-group col-md-3">
 						<label>Apellido Paterno</label>
 						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Apellido Paterno" />
 					</div>
-					<div class="form-group">
+					<div class="form-group col-md-3">
 						<label>Apellido Materno</label>
 						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
 					</div>
-					<div class="form-group">
+					<div class="form-group col-md-3">
 						<label>Email</label>
 						<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electrónico" />
 					</div> 
-					<div class="form-group">
+					<div class="form-group col-md-3">
 						<label>Semestre</label>
 						<input type="text" name="semestre" id="semestre" class="form-control" placeholder="Semestre" />
 					</div>
-					<div class="form-group">
-						<label>Beca</label>
-						<input type="text" name="beca" id="beca" class="form-control" placeholder="Beca" />%
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Dar de Alta</button>        
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Guardar</button>
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Eliminar</button>
 				</div>
 			</form>
 		</div>

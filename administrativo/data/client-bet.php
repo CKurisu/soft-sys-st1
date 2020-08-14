@@ -1,43 +1,65 @@
  <div class="modal fade" id="Nuevomodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
- <div class="modal-dialog modal-sm" role="document">
+ <div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Agrega nueva persona</h4>
+				<h4 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h4>
 			</div>
-                    <form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
 				<div class="modal-body">
-					<div class="form-group">
-						<label>Matr&iaucte;cula</label>
-						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="Matr&iacute;cula" />
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
 					</div>
-					<div class="form-group">
-						<label>Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" />
-					</div>
-					<div class="form-group">
-						<label>Apellido Paterno</label>
-						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Apellido Paterno" />
-					</div>
-					<div class="form-group">
-						<label>Apellido Materno</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
-					</div>
-					<div class="form-group">
-						<label>Email</label>
-						<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electrónico" />
-					</div> 
-					<div class="form-group">
-						<label>Semestre</label>
-						<input type="text" name="semestre" id="semestre" class="form-control" placeholder="Semestre" />
-					</div>
-					<div class="form-group">
-						<label>Beca</label>
-						<input type="text" name="beca" id="beca" class="form-control" placeholder="Beca" />%
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Laboratorio</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Laboratorio" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Nombre</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Nombre" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Paterno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Paterno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Materno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Correo Electr&oacute;nico</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electr&oacute;nico" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Direcci&oacute;n</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Direcci&oacute;n" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Tel&eacute;fono Oficina</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Extension</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Extension" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Celular</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Celular" />
+						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Dar de Alta</button>        
+					<button type="submit" class="btn btn-success" id="guardarnuevo">Guardar</button>
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
+					<button type="submit" class="btn btn-warning" id="guardarnuevo">Eliminar</button>
 				</div>
 			</form>
 		</div>

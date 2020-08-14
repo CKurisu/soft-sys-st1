@@ -3,7 +3,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h4>
+				<h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
 			</div>
 				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
 				<div class="modal-body">

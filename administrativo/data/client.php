@@ -62,8 +62,6 @@
 			<th scope="col" class="tab_centrar">Nombre</th>
 			<th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
 			<th scope="col" class="tab_centrar">Nombre</th>
-			<th scope="col" class="tab_centrar">Creado por</th>
-            <th scope="col" class="tab_centrar">Actulizado por</th>
 			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
@@ -77,8 +75,7 @@
             <td class="tab_centrar"></td>
             <td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalDetalle" class="btn azul"><i class="fas fa-info"></i> Detalle</a></td>
 			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
 			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
        	</tr>

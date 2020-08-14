@@ -14,31 +14,26 @@
 			<li class="header">MENU</li>
 			<li class="treeview">
 				<a href="#">
-					<i class="fa fa-mortar-board"></i><span>&ensp;Alumnos</span>
+					<i class="fa fa-mortar-board"></i><span>&ensp;Administraci&oacute;n del Sistema</span>
 					<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="index.php?tp=1"><i class="fa fa-list-alt"></i> Lista </a></li>
-					
-					 <li class="treeview">
-                  <a href="#"><i class="fa fa-user-plus"></i> Nuevo
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="carreras.php"><i class="fa fa-circle-o"></i> Carreras</a></li>                   
-                  </ul>
-                </li>
-					<li><a href="index.php?tp=4"><i class="fa fa-group"></i> Exalumnos </a></li>
-					<li><a href="index.php?tp=5"><i class="fa fa-user-circle"></i> Bajas</a></li>
+					<li><a href="index.php?tp=1"><i class="fa fa-list-alt"></i> Administraci&oacute;n de Usuarios </a></li>
+					<li class="treeview">
+						<a href="index.php?tp=4"><i class="fa fa-group"></i> Administraci&oacute;n de Clientes </a>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+						<ul class="treeview-menu">
+							<li><a href="index.php?tp=4"><i class="fa fa-group"></i> Intermediarios </a></li>
+							<li><a href="index.php?tp=4"><i class="fa fa-group"></i> Clientes </a></li>
+						</ul>
+					</li>
 					  
 				</ul>
 			</li><?php	include("alu_nuevo.php");	?>
 
 			<li class="treeview">
 				<a href="#">
-					<i class="fa fa-drivers-license-o"></i><span>&ensp;Profesores</span>
+					<i class="fa fa-drivers-license-o"></i><span> Recepci&oacute;n</span>
 					<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 				</a>
 				<ul class="treeview-menu">

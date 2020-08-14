@@ -86,27 +86,20 @@
 				</div>
 				<div class="row">
 					<div class="form-group col-md-3">
-						<label>Nombre Cliente</label>
-						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Nombre Cliente" />
+						<label>Creado por:</label>
+						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="nombre" value="Alicia Osuna"/> 
 					</div>
 					<div class="form-group col-md-3">
-						<label>Intermediario</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Intermediario" />
+						<label>Fecha:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
 					</div>
 					<div class="form-group col-md-3">
-						<label>Estado</label>
-						<input type="text" name="correo" id="correo" class="form-control" placeholder="Estado" />
+						<label>Editado por:</label>
+						<input type="text" name="correo" id="correo" class="form-control" placeholder="Nombre" value="Javier Solis"/> 
 					</div> 
 					<div class="form-group col-md-3">
-						<label>Tipo Cliente</label>
-						<select class="form-control" name="semestre" id="semestre">
-							<option>--</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+						<label>Fecha:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
 					</div>
 				</div>
 			</div>

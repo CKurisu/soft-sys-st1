@@ -68,7 +68,7 @@
 		</tr>
 	</thead>
 	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
-            id="nuevoAlumno"><i class="fas fa-plus"></i></button>
+            id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
        <tbody>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
@@ -79,8 +79,8 @@
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i></a></td>
-			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
        	</tr>
 		<?php
 			/*$x=0;

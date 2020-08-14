@@ -10,7 +10,7 @@
 					<div class="row">
 						<div class="form-group col-md-3">
 							<label>ID Cliente</label>
-							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly/>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
 						</div>
 						<div class="form-group col-md-3">
 							<label>Status</label>
@@ -77,7 +77,7 @@
 				<div class="row">
 					<div class="form-group col-md-3">
 						<label>ID Cliente</label>
-						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly/>
+						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
 					</div>
 					<div class="form-group col-md-3">
 						<label>Status</label>
@@ -104,11 +104,77 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary" id="guardarnuevo">Dar de Alta</button>        
+				<button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
 			</div>
 		</div>
 	</div>
-</div>	
+</div>
+
+ <div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
+			</div>
+				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Laboratorio</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Laboratorio" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Nombre</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Nombre" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Paterno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Paterno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Materno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Correo Electr&oacute;nico</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electr&oacute;nico" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Direcci&oacute;n</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Direcci&oacute;n" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Tel&eacute;fono Oficina</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Extension</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Extension" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Celular</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Celular" />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <table class="table table-bordered table-hover">
 	<thead>
@@ -126,12 +192,12 @@
             id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
        <tbody>
        	<tr class="tab_td">
-       		<th scope="row" class="tab_centrar"></th>
-       		<td class="tab_centrar"></td>
-			<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
-       		<td class="tab_centrar"></td>
+       		<th scope="row" class="tab_centrar">00001243</th>
+       		<td class="tab_centrar">Matriz</td>
+			<td class="tab_centrar">Juan Antonio Pacheco Pulido</td>
+       		<td class="tab_centrar">kaleb29q_f351b@xedmi.com</td>
+       		<td class="tab_centrar">Calle Metepec 50, Col. Cumbria, Cuautitlán Izcalli</td>
+       		<td class="tab_centrar">55-5868-6664</td>
 			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalDetalle" class="btn azul"><i class="fas fa-info"></i> Detalle</a></td>
 			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
 			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>

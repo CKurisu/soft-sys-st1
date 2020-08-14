@@ -88,10 +88,18 @@
 						<label>Fecha:</label>
 						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
 					</div>
+					<div class="form-group col-md-3">
+						<label>Fecha Inicio Validez:</label>
+						<input type="text" name="correo" id="correo" class="form-control" placeholder="Nombre" value="13-08-2020"/> 
+					</div> 
+					<div class="form-group col-md-3">
+						<label>Fecha Termino Validez:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+				<button type="button" class="btn azul" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
 			</div>
 		</div>
 	</div>
@@ -156,7 +164,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
+					<button type="submit" class="btn cafe" id="guardarnuevo">Modificar</button>
 				</div>
 			</form>
 		</div>

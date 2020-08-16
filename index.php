@@ -79,60 +79,10 @@
 							}
 							else
 							{
-								$query_alu = "SELECT id_alumno FROM alumnos WHERE matricula = '".$_POST["usuario"]."' AND clave = '".$clave."'";
-								$consulta_alu = $sag->query($query_alu);
-								if($consulta_alu->num_rows > 0)
-								{
-									$rs_alu = $consulta_alu->fetch_assoc();
-									$_SESSION['usuario'] = $rs_alu["id_alumno"];
-									$_SESSION['lvl'] = 4;
-									$_SESSION['autenticado'] = "SI";
-									
-									if($clave=="202cb962ac59075b964b07152d234b70")
-									{
-										echo '<script type="text/javascript">
-												document.location="admin/modclave.php?tp=0";
-											</script>';
-									}
-									else						//ALUMNOS
-									{
-										echo '<script type="text/javascript">
-											document.location="alumnos/index.php?tp=0";
-										</script>';
-									}
-								}
-								else
-								{
-									$query_pro = "SELECT id_profesor FROM profesores WHERE id_profesor = '".$_POST["usuario"]."' AND clave = '".$clave."'";
-									$consulta_pro = $sag->query($query_pro);
-									if($consulta_pro->num_rows > 0)
-									{
-										$rs_pro = $consulta_pro->fetch_assoc();
-										$_SESSION['usuario'] = $rs_pro["id_profesor"];
-										$_SESSION['lvl'] = 5;
-										$_SESSION['autenticado'] = "SI";
-										
-										if($clave=="202cb962ac59075b964b07152d234b70")
-										{
-											echo '<script type="text/javascript">
-													document.location="admin/modclave.php?tp=0";
-												</script>';
-										}
-										else					//PROFESORES
-										{
-											echo '<script type="text/javascript">
-												document.location="profesores/index.php?tp=0";
-											</script>';
-										}
-									}
-									else
-									{
-										echo '<script type="text/javascript">
-											alert("Error al ingresar, verifique su usuario y contrase\u00f1a");
-										</script>';
-										include("ini_entrada.php");
-									}
-								}
+								echo '<script type="text/javascript">
+									alert("Error al ingresar, verifique su usuario y contrase\u00f1a");
+								</script>';
+								include("ini_entrada.php");
 							}
 							
 						}

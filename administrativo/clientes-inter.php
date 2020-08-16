@@ -104,6 +104,9 @@
 			<!----------     AQUI TERMINA LA PIECERA     ---------->
 		</div>
 		<?php	include("../head_menu_js.php");	?>
+		<script type="text/javascript">
+		
+		</script>
 	</body>
 	<!-----					TERMINA EL SISTEMA					----->
 </html>

@@ -1,12 +1,4 @@
 <?php	session_start();	?>
-<!-----------------------------------------------------------
------													-----
------		LIDER DE PROYECTO: SAUL ARROYO G.			-----
------		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	-----
------		ThE SaG Corp								-----
------		INDEX										-----
------													-----
------------------------------------------------------------->
 <?php
 	include("cnx.php");
 	$sag = cnx();

@@ -1,4 +1,5 @@
-<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/jquery.js"><\/script>')</script>
 <script src="../js/menu/bootstrap.min.js"></script>
 <script src="../js/menu/temas.min.js"></script>
 <script type="text/javascript">

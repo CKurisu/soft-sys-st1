@@ -1,0 +1,15 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} Develop Site
+${licensePrefix} Developed with Bootstrap.
+${licensePrefix}
+${licensePrefix} @version     v1.0.1, built on ${date?date?string("yyy-MM-dd")} ${time?time?string("hh:mm:ss a")}
+${licensePrefix} @author      SoftSystem, LTD.
+${licensePrefix} @copyright   (c) 2013 - SoftSystem, LTD. All rights reserved.
+${licensePrefix} @license     Licensed under the MIT license
+${licensePrefix}              Commercial: http://creativecommons.org/license/
+${licensePrefix}              Non-commercial: http://creativecommons.org/licenses/by-nc-nd/3.0/
+<#if licenseLast??>
+${licenseLast}
+</#if>

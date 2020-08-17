@@ -9,9 +9,9 @@
             "commentendht": "-->",
             "name": "Develop Site",
             "header": "Developed with Bootstrap",
-            "autor": "SoftSystem, LTD.",
+            "autor": "@author SoftSystem, LTD.",
             "version": "@version   v1.0.1",
-            "copy": "@autor   (c) 2013 - SoftSystem, LTD. All rights reserved.",
+            "copy": "@copyright    (c) 2013 - SoftSystem, LTD. All rights reserved.",
             "licence": "@licence   Licensed under the MIT license."
         }
     },

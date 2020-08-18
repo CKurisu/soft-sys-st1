@@ -22,4 +22,5 @@
     });
     });
 </script>
+<script src="../js/sweetalert.min.js"></script>
 <script src="../js/jQueryForms.min.js"></script>

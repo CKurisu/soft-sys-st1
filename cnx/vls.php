@@ -21,3 +21,4 @@ define("DB_NAME", "corpo133_sii");
 
 $tbl_prefix = ""; //Prefix for all database tables
 $tbl_clinter = $tbl_prefix."intermediarios";
+$tbl_cli = $tbl_prefix."clientes";

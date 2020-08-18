@@ -16,4 +16,9 @@ class htmsg {
     public function dangerEx(){return '<div class="alert alert-danger text-center"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><strong>Error!. </strong>Ocurrio un error al realizar la operacion, intente de nuevo mas tarde, estamos trabajando para solucionarlo.</div>';}
     public function info($msg) {return '<div class="alert alert-info text-center"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><strong>Aviso!. </strong>'.$msg.'.</div>';}
     public function warning($msg) {return '<div class="alert alert-warning text-center"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><strong>Advertencia!. </strong>'.$msg.'.</div>';}
+    public function successSw($msg) {return '{title: "Exito!.",text: "'.$msg.'",icon: "success",buttons: false,timer: 1500}';}
+    public function dangerSw($msg){return '{title: "Peligro!.",text: ""'.$msg.'"",icon: "error",buttons: false,timer: 1500}';}
+    public function dangerExSw(){return '{title: "Error!.",text: "Ocurrio un error al realizar la operacion, intente de nuevo mas tarde, estamos trabajando para solucionarlo.",icon: "error",buttons: false,timer: 1500}';}
+    public function infoSw($msg) {return '{title: "Aviso!.",text: "'.$msg.'",icon: "info",buttons: false,timer: 1500}';}
+    public function warningSw($msg) {return '{title: "Advertencia!.",text: "'.$msg.'",icon: "warning",buttons: false,timer: 1500}';}
 }

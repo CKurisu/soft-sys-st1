@@ -71,7 +71,7 @@ if($rowu>0){
 					<div class="row">
                                             <div class="form-group col-md-3">
                                                 <label>ID Cliente</label>
-                                                <input type="number" class="form-control" placeholder="00001243"/>
+                                                <input type="number" class="form-control" placeholder="00001243" readonly/>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Status</label>
@@ -147,14 +147,9 @@ if($rowu>0){
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel"> Eliminaci&oacute;n de Registro</h4>
+                                    <h4 class="modal-title" id="myModalLabel"> Modificaci&oacute;n de Registro</h4>
                                 </div>
-                                <div class="modal-body">
-                                    <div id="info-uint"></div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
-                                </div>
+                                <div id="sttgs-uint"></div>
                             </div>
                         </div>
                     </div>
@@ -176,116 +171,6 @@ if($rowu>0){
                             </div>
                         </div>
                     </div>
-<!-- <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
- <div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"> Detalle de Registro</h4>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="form-group col-md-3">
-						<label>ID Cliente</label>
-						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
-					</div>
-					<div class="form-group col-md-3">
-						<label>Status</label>
-						<div><span class="label label-success">Activo</span></div><br />
-					</div>
-				</div>
-				<div class="row">
-					<div class="form-group col-md-3">
-						<label>Creado por:</label>
-						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="nombre" value="Alicia Osuna"/> 
-					</div>
-					<div class="form-group col-md-3">
-						<label>Fecha:</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
-					</div>
-					<div class="form-group col-md-3">
-						<label>Editado por:</label>
-						<input type="text" name="correo" id="correo" class="form-control" placeholder="Nombre" value="Javier Solis"/> 
-					</div> 
-					<div class="form-group col-md-3">
-						<label>Fecha:</label>
-						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
- 	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
-			</div>
-				<form id="yui11011002" name="yui11011002" novalidate method="POST">
-				<div class="modal-body">
-					<div class="row">
-						<div class="form-group col-md-3">
-							<label>ID Cliente</label>
-							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
-						</div>
-						<div class="form-group col-md-3">
-							<label>Status</label>
-							<div><span class="label label-success">Activo</span></div><br />
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-md-3">
-							<label>Laboratorio</label>
-							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Laboratorio" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Nombre</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Nombre" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Apellido Paterno</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Paterno" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Apellido Materno</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Correo Electr&oacute;nico</label>
-							<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electr&oacute;nico" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Direcci&oacute;n</label>
-							<input type="text" name="correo" id="correo" class="form-control" placeholder="Direcci&oacute;n" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Tel&eacute;fono Oficina</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Tel&eacute;fono Oficina" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Extension</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Extension" />
-						</div>
-						<div class="form-group col-md-3">
-							<label>Celular</label>
-							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Celular" />
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>-->
-
                     <div class="table">
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -317,7 +202,7 @@ if($rowu>0){
                             <td class="tab_centrar">'.$ret[6].'</td>
                             <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
-                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-uint btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-uint btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>
                             </tr>';
                             $i++;

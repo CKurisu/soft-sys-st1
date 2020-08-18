@@ -11,17 +11,18 @@
  *               Non-commercial: http://creativecommons.org/licenses/by-nc-nd/3.0/
  */
 session_start();
-include("../cnx.php");
-$sag=cnx();
-
+include '../clss/htmsg.cls.php';
+require '../cnx/cnx.php';
+$html=new htmsg();
+$connectionPDO= initCnx();
 $id = $_SESSION['usuario'];
-$query_usu = "SELECT nombre FROM usuarios WHERE id_usuario = '".$id."'";
-$consulta_usu = $sag->query($query_usu);
-if($consulta_usu->num_rows > 0)
-{
-        $rs_usu = $consulta_usu->fetch_assoc();
-        $nom = $rs_usu["nombre"];
-	}
+$idusr=$connectionPDO->prepare("SELECT nombre FROM usuarios WHERE id_usuario=:id LIMIT 1;");
+$idusr->bindParam(':id', $id, PDO::PARAM_INT);
+$idusr->execute();
+$rowu=$idusr->rowCount();
+if($rowu>0){
+    $nom =$idusr->fetchColumn();
+}
 ?>
 
 <!DOCTYPE html>
@@ -122,6 +123,56 @@ if($consulta_usu->num_rows > 0)
                                         <button type="submit" class="btn btn-warning" id="guardarnuevo">Eliminar</button>-->
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"> Detalle de Registro</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="info-uint"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"> Eliminaci&oacute;n de Registro</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="info-uint"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"> Eliminaci&oacute;n de Registro</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="messagefrmdl"></div>
+                                    <div class="center-block text-center">Estas seguro de querer eliminar este registro?</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-dlst2-uint btn btn-danger" data-id=""><i class="fas fa-times-circle"></i> Eliminar</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -235,33 +286,49 @@ if($consulta_usu->num_rows > 0)
 	</div>
 </div>-->
 
-<table class="table table-bordered table-hover">
-	<thead>
-		<tr class="tab_tr">
-			<th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
-			<th scope="col" class="tab_centrar">Laboratorio</th>
-			<th scope="col" class="tab_centrar">Nombre</th>
-			<th scope="col" class="tab_centrar">Correo</th>
-			<th scope="col" class="tab_centrar">Direcci&oacute;n</th>
-			<th scope="col" class="tab_centrar">Telefono(s)</th>
-			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
-		</tr>
-	</thead>
-	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
-            id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
-       <tbody>
-       	<tr class="tab_td">
-       		<th scope="row" class="tab_centrar">00001243</th>
-       		<td class="tab_centrar">Matriz</td>
-			<td class="tab_centrar">Juan Antonio Pacheco Pulido</td>
-       		<td class="tab_centrar">kaleb29q_f351b@xedmi.com</td>
-       		<td class="tab_centrar">Calle Metepec 50, Col. Cumbria, Cuautitlán Izcalli</td>
-       		<td class="tab_centrar">55-5868-6664</td>
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalDetalle" class="btn azul"><i class="fas fa-info"></i> Detalle</a></td>
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
-			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
-			
-       	</tr>
+                    <div class="table">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="tab_tr">
+                                    <th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
+                                    <th scope="col" class="tab_centrar">Laboratorio</th>
+                                    <th scope="col" class="tab_centrar">Nombre</th>
+                                    <th scope="col" class="tab_centrar">Correo</th>
+                                    <th scope="col" class="tab_centrar">Direcci&oacute;n</th>
+                                    <th scope="col" class="tab_centrar">Telefono(s)</th>
+                                    <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
+                            <tbody>
+                            <?php
+                            try {
+                            $connectionPDO= initCnx();
+                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
+                            $statement->setFetchMode(PDO::FETCH_NUM);
+                            $statement->execute();
+                            $i=1;
+                            while ($ret=$statement->fetch()){
+                            echo '<tr class="tab_td">
+                            <td class="tab_centrar">'.$ret[0].'</td>
+                            <td class="tab_centrar">'.$ret[1].'</td>
+                            <td class="tab_centrar">'.$ret[2].' '.$ret[3].' '.$ret[4].''.'</td>
+                            <td class="tab_centrar">'.$ret[5].'</td>
+                            <td class="tab_centrar">'.$ret[6].'</td>
+                            <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
+                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
+                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-uint btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>
+                            </tr>';
+                            $i++;
+                            }
+                            unset($connectionPDO);} catch (Exception $ex) {
+                            echo $ex->getMessage();
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
 		<?php
 			/*$x=0;
 			$query_alu = "SELECT * FROM alumnos LIMIT 0,100";

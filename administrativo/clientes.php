@@ -1,24 +1,17 @@
-<?php	session_start();	?>
-<!-----------------------------------------------------------
------													-----
------		LIDER DE PROYECTO: SAUL ARROYO G.			-----
------		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	-----
------		ThE SaG Corp								-----
------		INDEX										-----
------													-----
------------------------------------------------------------->
 <?php
-	include("../cnx.php");
-	$sag=cnx();
-	
-	$id = $_SESSION['usuario'];
-	$query_usu = "SELECT nombre FROM usuarios WHERE id_usuario = '".$id."'";
-	$consulta_usu = $sag->query($query_usu);
-	if($consulta_usu->num_rows > 0)
-	{
-		$rs_usu = $consulta_usu->fetch_assoc();
-		$nom = $rs_usu["nombre"];
-	}
+session_start();
+include '../clss/htmsg.cls.php';
+require '../cnx/cnx.php';
+$html=new htmsg();
+$connectionPDO= initCnx();
+$id = $_SESSION['usuario'];
+$idusr=$connectionPDO->prepare("SELECT nombre FROM usuarios WHERE id_usuario=:id LIMIT 1;");
+$idusr->bindParam(':id', $id, PDO::PARAM_INT);
+$idusr->execute();
+$rowu=$idusr->rowCount();
+if($rowu>0){
+    $nom =$idusr->fetchColumn();
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +26,356 @@
 	</head>
 	<!-----					COMIENZA EL CUERPO DEL SISTEMA					----->
 	<body class="hold-transition skin-blue sidebar-mini">
+            <div class="modal fade" id="Nuevomodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title" id="myModalLabel">Cliente</h3>
+			</div>
+                    <form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Nombre Cliente</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Nombre Cliente" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Intermediario</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Intermediario" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Estado</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Estado" />
+						</div> 
+						<div class="form-group col-md-3">
+							<label>Tipo Cliente</label>
+							<select class="form-control" name="semestre" id="semestre">
+								<option>--</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success" id="guardarnuevo">Guardar</button>
+					<button type="submit" class="btn btn-primary" id="guardarnuevo">Modificar</button>
+					<button type="submit" class="btn btn-warning" id="guardarnuevo">Eliminar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ 	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"> Detalle de Registro</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label>ID Cliente</label>
+						<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label>Status</label>
+						<div><span class="label label-success">Activo</span></div><br />
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label>Creado por:</label>
+						<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="nombre" value="Alicia Osuna"/> 
+					</div>
+					<div class="form-group col-md-3">
+						<label>Fecha:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label>Editado por:</label>
+						<input type="text" name="correo" id="correo" class="form-control" placeholder="Nombre" value="Javier Solis"/> 
+					</div> 
+					<div class="form-group col-md-3">
+						<label>Fecha:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label>Fecha Inicio Validez:</label>
+						<input type="text" name="correo" id="correo" class="form-control" placeholder="Nombre" value="13-08-2020"/> 
+					</div> 
+					<div class="form-group col-md-3">
+						<label>Fecha Termino Validez:</label>
+						<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Fecha" value="13-08-2020"/>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn azul" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ 	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
+			</div>
+				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Laboratorio</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Laboratorio" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Nombre</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Nombre" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Paterno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Paterno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Materno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Correo Electr&oacute;nico</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electr&oacute;nico" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Direcci&oacute;n</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Direcci&oacute;n" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Tel&eacute;fono Oficina</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Extension</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Extension" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Celular</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Celular" />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn cafe" id="guardarnuevo">Modificar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+                                    
+                                    <div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ 	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
+			</div>
+				<form id="registerForm" name="formRegister" novalidate action="insert.php" method="POST">
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>ID Cliente</label>
+							<input type="text" name="matricula" id="matricula" class="form-control" placeholder="00001243" readonly value="00001243"/>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Status</label>
+							<div><span class="label label-success">Activo</span></div><br />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label>Laboratorio</label>
+							<input type="text" name="appaterno" id="appaterno" class="form-control" placeholder="Laboratorio" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Nombre</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Nombre" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Paterno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Paterno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Apellido Materno</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Apellido Materno" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Correo Electr&oacute;nico</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo Electr&oacute;nico" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Direcci&oacute;n</label>
+							<input type="text" name="correo" id="correo" class="form-control" placeholder="Direcci&oacute;n" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Tel&eacute;fono Oficina</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Extension</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Extension" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Celular</label>
+							<input type="text" name="apmaterno" id="apmaterno" class="form-control" placeholder="Celular" />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn cafe" id="guardarnuevo">Modificar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+            <div class="modal fade" id="DetalleCli" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+			<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 class="modal-title" id="myModalLabel"> Datos Cliente</h3>
+			</div>
+                        <div class="modal-body">
+                            <label>Id Cliente</label> 1297384
+                            <label>Estatus</label> <span class="label label-success">Activo</span>
+                            <div class="table">
+                        <table class="table table-bordered table-hover table-responsive">
+                            <thead>
+                                <tr class="tab_tr">
+                                    <th scope="col" class="tab_centrar">Nombre Cliente</th>
+                                    <th scope="col" class="tab_centrar">Intermediario</th>
+                                    <th scope="col" class="tab_centrar">Estado</th>
+                                    <th scope="col" class="tab_centrar">Tipo Cliente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+//                            try {
+//                            $connectionPDO= initCnx();
+//                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
+//                            $statement->setFetchMode(PDO::FETCH_NUM);
+//                            $statement->execute();
+//                            $i=1;
+//                            while ($ret=$statement->fetch()){
+//                            echo '<tr class="tab_td">
+//                            <td class="tab_centrar">'.$ret[0].'</td>
+//                            <td class="tab_centrar">'.$ret[1].'</td>
+//                            <td class="tab_centrar">'.$ret[2].' '.$ret[3].' '.$ret[4].''.'</td>
+//                            <td class="tab_centrar">'.$ret[5].'</td>
+//                            <td class="tab_centrar">'.$ret[6].'</td>
+//                            <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
+//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
+//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+//                            <td class="tab_centrar"><nutton href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
+//                            </tr>';
+//                            $i++;
+//                            }
+//                            unset($connectionPDO);} catch (Exception $ex) {
+//                            echo $ex->getMessage();
+//                            }
+                            ?>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
+                            <button data-toggle="modal" data-target="#DetalleCli2" class="btn azul"><i class="fas fa-info"></i> Mas Detalle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="DetalleCli2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+			<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 class="modal-title" id="myModalLabel"> Datos Cliente</h3>
+			</div>
+                        <div class="modal-body">
+                            <div class="table">
+                        <table class="table table-bordered table-hover table-responsive">
+                            <thead>
+                                <tr class="tab_tr">
+                                    <th scope="col" class="tab_centrar">RFC</th>
+                                    <th scope="col" class="tab_centrar">Direccion/Informe Cotizacion</th>
+                                    <th scope="col" class="tab_centrar">Status</th>
+                                    <th scope="col" class="tab_centrar">Direccion</th>
+                                    <th scope="col" class="tab_centrar">Puntos de Muestreo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+//                            try {
+//                            $connectionPDO= initCnx();
+//                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
+//                            $statement->setFetchMode(PDO::FETCH_NUM);
+//                            $statement->execute();
+//                            $i=1;
+//                            while ($ret=$statement->fetch()){
+//                            echo '<tr class="tab_td">
+//                            <td class="tab_centrar">'.$ret[0].'</td>
+//                            <td class="tab_centrar">'.$ret[1].'</td>
+//                            <td class="tab_centrar">'.$ret[2].' '.$ret[3].' '.$ret[4].''.'</td>
+//                            <td class="tab_centrar">'.$ret[5].'</td>
+//                            <td class="tab_centrar">'.$ret[6].'</td>
+//                            <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
+//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
+//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+//                            <td class="tab_centrar"><nutton href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
+//                            </tr>';
+//                            $i++;
+//                            }
+//                            unset($connectionPDO);} catch (Exception $ex) {
+//                            echo $ex->getMessage();
+//                            }
+                            ?>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		<div class="wrapper">
 		
 			<!----------     AQUI COMIENZA EL HEADER     ---------->
@@ -55,41 +398,71 @@
 			
 				<section class="content-header">
 					<center class="titulo">
-						<?php
-							switch($_SESSION['tp'])
-							{
-								case 1:
-									echo 'Lista de Clientes';
-								break;
-								case 2:
-									echo 'Nuevo Alumno';
-								break;
-								case 3:
-									echo 'Lista de Alumnos';
-								break;
-							}
-						?>
+                                            Lista de Clientes
 					</center>
 				</section>
 					
 				<!----------     TITULO     ---------->
 				<section class="content">
-					<?php
-						switch($_SESSION['tp'])
-						{
-							case 1:
-								include("data/client.php");
-							break;
-							case 2:
-								include("alu_nuevo.php");
-								include("alu_nuevo.php");
-							break;
-							case 3:
-								include("alu_nuevog.php");
-								include("alu_lista.php");
-							break;
-						}
-					?>
+                                <table class="table table-bordered table-hover">
+                                        <thead>
+                                                <tr class="tab_tr">
+                                                        <th scope="col" class="tab_centrar">ID</th>
+                                            <th scope="col" class="tab_centrar">Estatus</th>
+                                                        <th scope="col" class="tab_centrar">Laboratorio</th>
+                                                        <th scope="col" class="tab_centrar">Nombre</th>
+                                                        <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
+                                                        <th scope="col" class="tab_centrar">Nombre</th>
+                                                        <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
+                                                </tr>
+                                        </thead>
+                                         <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
+                                            id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
+                                       <tbody>
+                                        <tr class="tab_td">
+                                                <th scope="row" class="tab_centrar"></th>
+                                                <td class="tab_centrar"><span class="label label-success">Activo</span></td>
+                                            <td class="tab_centrar"></td>
+                                            <td class="tab_centrar"></td>
+                                            <td class="tab_centrar"></td>
+                                                <td class="tab_centrar"></td>
+                                                        <td class="tab_centrar"><a data-toggle="modal" data-target="#DetalleCli" class="btn azul"><i class="fas fa-info"></i> Detalle</a></td>
+                                                        <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+                                                        <td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
+                                        </tr>
+                                                <?php
+                                                        /*$x=0;
+                                                        $query_alu = "SELECT * FROM alumnos LIMIT 0,100";
+                                                        $consulta_alu = $sag->query($query_alu);
+                                                        if($consulta_alu->num_rows > 0)
+                                                        {
+                                                                while($rs_alu = $consulta_alu->fetch_assoc())
+                                                                {
+                                                                        $x++;
+                                                                        $query_car= "SELECT nombre FROM carreras  WHERE id_carrera='".$rs_alu["ref_carrera"]."'";
+                                                                        $consulta_car = $sag->query($query_car);
+                                                                        $rs_car = $consulta_car->fetch_assoc();
+                                                                        $carrera = $rs_car["nombre"];
+
+                                                                        echo '<tr class="tab_td">
+                                                                                <th scope="row" class="tab_centrar">'.$x.'</th>
+                                                                                <td class="tab_centrar">'.$rs_alu["matricula"].'</td>
+                                                                                <td>'.$rs_alu["nombre"].' '.$rs_alu["appaterno"].' '.$rs_alu["apmaterno"].'</td>
+                                                                                <td>'.$carrera.'</td>
+                                                                                <td class="tab_centrar">'.$rs_alu["semestre"].'</td>
+                                                                                <td class="tab_centrar">'.$rs_alu["beca"].'%</td>
+                                                                                <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar</a></td>
+
+
+
+                                                                                <td class="tab_centrar"><a href="#" class="btn rojo">Dar de baja</a></td>
+                                                                        </tr>';
+                                                                }
+                                                        }
+                                                        include("alu_modificar.php");*/
+                                                ?>
+                                        </tbody>
+                                </table>
 				</section>
 			</div>
 			

@@ -210,64 +210,86 @@ if($rowu>0){
                 </section>
                 <!----------     TITULO     ---------->
                 <section class="content">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr class="tab_tr">
-                                <th scope="col" class="tab_centrar">ID</th>
-                                <th scope="col" class="tab_centrar">Estatus</th>
-                                <th scope="col" class="tab_centrar">Laboratorio</th>
-                                <th scope="col" class="tab_centrar">Nombre</th>
-                                <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
-                                <th scope="col" class="tab_centrar">Nombre</th>
-                                <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#ModalNuevo" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
-                        <tbody>
-                            <tr class="tab_td">
-                                <th scope="row" class="tab_centrar"></th>
-                                <td class="tab_centrar"><span class="label label-success">Activo</span></td>
-                                <td class="tab_centrar"></td>
-                                <td class="tab_centrar"></td>
-                                <td class="tab_centrar"></td>
-                                <td class="tab_centrar"></td>
-                                <td class="tab_centrar"><a data-toggle="modal" data-target="#DetalleCli" class="btn azul"><i class="fas fa-info"></i> Detalle</a></td>
-                                <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
-                                <td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
-                            </tr>
-                            <?php
-                                /*$x=0;
-                                $query_alu = "SELECT * FROM alumnos LIMIT 0,100";
-                                $consulta_alu = $sag->query($query_alu);
-                                if($consulta_alu->num_rows > 0)
-                                {
-                                        while($rs_alu = $consulta_alu->fetch_assoc())
-                                        {
-                                                $x++;
-                                                $query_car= "SELECT nombre FROM carreras  WHERE id_carrera='".$rs_alu["ref_carrera"]."'";
-                                                $consulta_car = $sag->query($query_car);
-                                                $rs_car = $consulta_car->fetch_assoc();
-                                                $carrera = $rs_car["nombre"];
-
-                                                echo '<tr class="tab_td">
-                                                        <th scope="row" class="tab_centrar">'.$x.'</th>
-                                                        <td class="tab_centrar">'.$rs_alu["matricula"].'</td>
-                                                        <td>'.$rs_alu["nombre"].' '.$rs_alu["appaterno"].' '.$rs_alu["apmaterno"].'</td>
-                                                        <td>'.$carrera.'</td>
-                                                        <td class="tab_centrar">'.$rs_alu["semestre"].'</td>
-                                                        <td class="tab_centrar">'.$rs_alu["beca"].'%</td>
-                                                        <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar</a></td>
-
-
-
-                                                        <td class="tab_centrar"><a href="#" class="btn rojo">Dar de baja</a></td>
-                                                </tr>';
-                                        }
+                    <div class="table">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr class="tab_tr">
+                                    <th scope="col" class="tab_centrar">ID</th>
+                                    <th scope="col" class="tab_centrar">Estatus</th>
+                                    <th scope="col" class="tab_centrar">Laboratorio</th>
+                                    <th scope="col" class="tab_centrar">Nombre</th>
+                                    <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
+                                    <th scope="col" class="tab_centrar">Nombre</th>
+                                    <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#ModalNuevo" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
+                            <tbody>
+                                <?php
+                                try {
+                                $statement=$connectionPDO->prepare("SELECT IdCliente,Status,CliLab,CliNomEm,IdInt,CliNom,CliApp,CliApm FROM {$tbl_cli};");
+                                $statement->setFetchMode(PDO::FETCH_NUM);
+                                $statement->execute();
+                                $i=1;
+                                while ($ret=$statement->fetch()){
+                                    switch ($ret[1]){
+                                        case 0:
+                                        $status='<span class="label label-danger">No Activo</span>';
+                                        break 1;
+                                        case 1:
+                                        $status='<span class="label label-success">Activo</span>';
+                                        break 1;
+                                    }
+                                echo '<tr class="tab_td">
+                                <td class="tab_centrar">'.$ret[0].'</td>
+                                <td class="tab_centrar">'.$status.'</td>
+                                <td class="tab_centrar">'.$ret[2].'</td>
+                                <td class="tab_centrar">'.$ret[3].'</td>
+                                <td class="tab_centrar">'.$ret[4].'</td>
+                                <td class="tab_centrar">'.$ret[5].' '.$ret[6].' '.$ret[7].''.'</td>
+                                <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-u btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
+                                <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-u btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
+                                <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-u btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>
+                                </tr>';
+                                $i++;
+                                }} catch (Exception $ex) {
+                                echo $ex->getMessage();
                                 }
-                                include("alu_modificar.php");*/
-                            ?>
-                        </tbody>
-                    </table>
+                                ?>
+                                <?php
+                                    /*$x=0;
+                                    $query_alu = "SELECT * FROM alumnos LIMIT 0,100";
+                                    $consulta_alu = $sag->query($query_alu);
+                                    if($consulta_alu->num_rows > 0)
+                                    {
+                                            while($rs_alu = $consulta_alu->fetch_assoc())
+                                            {
+                                                    $x++;
+                                                    $query_car= "SELECT nombre FROM carreras  WHERE id_carrera='".$rs_alu["ref_carrera"]."'";
+                                                    $consulta_car = $sag->query($query_car);
+                                                    $rs_car = $consulta_car->fetch_assoc();
+                                                    $carrera = $rs_car["nombre"];
+
+                                                    echo '<tr class="tab_td">
+                                                            <th scope="row" class="tab_centrar">'.$x.'</th>
+                                                            <td class="tab_centrar">'.$rs_alu["matricula"].'</td>
+                                                            <td>'.$rs_alu["nombre"].' '.$rs_alu["appaterno"].' '.$rs_alu["apmaterno"].'</td>
+                                                            <td>'.$carrera.'</td>
+                                                            <td class="tab_centrar">'.$rs_alu["semestre"].'</td>
+                                                            <td class="tab_centrar">'.$rs_alu["beca"].'%</td>
+                                                            <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar</a></td>
+
+
+
+                                                            <td class="tab_centrar"><a href="#" class="btn rojo">Dar de baja</a></td>
+                                                    </tr>';
+                                            }
+                                    }
+                                    include("alu_modificar.php");*/
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </div>	
             <!----------     AQUI TERMINA LA P�GINA
@@ -286,7 +308,7 @@ if($rowu>0){
                     </div>
                     <form id="yui11022001" name="yui11022001" novalidate>
                         <div class="modal-body">
-                            <div id="messagefrmrg"></div>
+                            <div id="messagefrmrgcli"></div>
                             <div class="row">
                                 <div class="form-group col-md-3">
                                     <label>ID Cliente</label>
@@ -303,8 +325,21 @@ if($rowu>0){
                                     <input type="text" name="lab" id="lab" class="form-control" placeholder="Laboratorio" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Nombre</label>
+                                    <label>Nombre del Cliente</label>
                                     <input type="text" name="nomcli" id="nomcli" class="form-control" placeholder="Nombre Cliente" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Cliente Intermediario</label>
+                                    <select class="form-control" name="idint">
+                                        <option value="">(Seleccione)</option>
+                                        <?php
+                                        $stint=$connectionPDO->prepare("SELECT * FROM {$tbl_clinter};");
+                                        $stint->setFetchMode(PDO::FETCH_NUM);
+                                        $stint->execute();
+                                        while ($ret=$stint->fetch()){
+                                        echo '<option value="'.$ret[0].'">'.$ret[2].' '.$ret[3].' '.$ret[4].'</option>';}
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Nombre</label>
@@ -369,7 +404,37 @@ if($rowu>0){
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="ModalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"> Modificaci&oacute;n de Registro</h4>
+                    </div>
+                    <div id="sttgs-u"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"> Eliminaci&oacute;n de Registro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="messagefrmdlcli"></div>
+                        <div class="center-block text-center">Estas seguro de querer eliminar este registro?</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-dlst2-u btn btn-danger" data-id=""><i class="fas fa-times-circle"></i> Eliminar</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php	include("../head_menu_js.php");	?>
     </body>
+    <?php closeCnxP($connectionPDO);?>
     <!-----					TERMINA EL SISTEMA					----->
 </html>

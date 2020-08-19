@@ -1,15 +1,4 @@
 <?php
-/* 
- *  Develop Site
- *  Developed with Bootstrap.
- * 
- *  @version     v1.0.1, built on 2020-08-17 09:33:46 PM
- *  @author      SoftSystem, LTD.
- *  @copyright   (c) 2013 - SoftSystem, LTD. All rights reserved.
- *  @license     Licensed under the MIT license
- *               Commercial: http://creativecommons.org/license/
- *               Non-commercial: http://creativecommons.org/licenses/by-nc-nd/3.0/
- */
 $message="";
 $fail=0;
 if(!isset($_POST['v'])&&empty($_POST['v']))

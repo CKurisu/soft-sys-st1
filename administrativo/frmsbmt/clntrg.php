@@ -1,16 +1,5 @@
 <?php
 session_start();
-/* 
- *  Develop Site
- *  Developed with Bootstrap.
- * 
- *  @version     v1.0.1, built on 2020-08-18 08:46:48 PM
- *  @author      SoftSystem, LTD.
- *  @copyright   (c) 2013 - SoftSystem, LTD. All rights reserved.
- *  @license     Licensed under the MIT license
- *               Commercial: http://creativecommons.org/license/
- *               Non-commercial: http://creativecommons.org/licenses/by-nc-nd/3.0/
- */
 if(empty($_POST['x1'])  ||
     empty($_POST['x2']) ||
     empty($_POST['x3']) ||

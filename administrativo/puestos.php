@@ -1,14 +1,4 @@
-<?php	session_start();	?>
-<!--
- -- Develop Site
- -- Developed with Bootstrap
- --
- -- @version   v1.0.1, Created on Mon Jul 27 2020 18:31:41
- -- SoftSystem, LTD.
- -- @autor   (c) 2013 - SoftSystem, LTD. All rights reserved.
- -- @licence   Licensed under the MIT license.
--->
-<?php
+<?php	session_start();
 	include("../cnx.php");
 	$sag=cnx();
 	

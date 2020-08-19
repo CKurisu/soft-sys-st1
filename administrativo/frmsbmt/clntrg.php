@@ -9,12 +9,11 @@ if(empty($_POST['x1'])  ||
     empty($_POST['x7']) ||
     empty($_POST['x8']) ||
     empty($_POST['x9']) ||
-    empty($_POST['x10'])||
     empty($_POST['x11'])||
     empty($_POST['x12'])||
-    empty($_POST['x13'])||
     empty($_POST['x14'])||
-    empty($_POST['x15']))
+    empty($_POST['x15'])||
+    empty($_POST['x16']))
    {
         echo "No Arguments Provider.";
 	return false;
@@ -35,48 +34,66 @@ try {
         $nomusr =$idusr->fetchColumn();
     }
     $lab=$_POST['x1'];
-    $nom=$_POST['x2'];
-    $app=$_POST['x3'];
-    $apm=$_POST['x4'];
-    $rfc=$_POST['x5'];
-    $str=$_POST['x6'];
-    $numex=$_POST['x7'];
-    $numin=$_POST['x8'];
-    $col=$_POST['x9'];
-    $cp=$_POST['x10'];
-    $loc=$_POST['x11'];
-    $cd=$_POST['x12'];
-    $edo=$_POST['x13'];
-    $apm=$_POST['x14'];
-    $apm=$_POST['x15'];
+    $nomcli=$_POST['x2'];
+    $idint=$_POST['x3'];
+    $nom=$_POST['x4'];
+    $app=$_POST['x5'];
+    $apm=$_POST['x6'];
+    $rfc=$_POST['x7'];
+    $str=$_POST['x8'];
+    $numex=$_POST['x9'];
+    $numin=$_POST['x10'];
+    $col=$_POST['x11'];
+    $cp=$_POST['x12'];
+    $loc=$_POST['x13'];
+    $mun=$_POST['x14'];
+    $cd=$_POST['x15'];
+    $edo=$_POST['x16'];
+    $add=$str.' No.'.$numex.' '.$numin.' '.$col.' '.$cp.' '.$loc.' '.$cd.' '.$edo;
     $dt= date('Y-m-d');
-    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_clinter} WHERE Laboratorio=:lab AND Nombres=:nom AND ApPaterno=:app AND ApMaterno=:apm AND Correo=:mail AND Direccion=:add OR Telof=:tel OR Extension=:ext OR Celular=:cel LIMIT 1;");
-    $statement->bindParam(':lab', $lab, PDO::PARAM_STR);
-    $statement->bindParam(':nom', $nom, PDO::PARAM_STR);
-    $statement->bindParam(':app', $app, PDO::PARAM_STR);
-    $statement->bindParam(':apm', $apm, PDO::PARAM_STR);
-    $statement->bindParam(':mail', $mail, PDO::PARAM_STR);
-    $statement->bindParam(':add', $add, PDO::PARAM_STR);
-    $statement->bindParam(':tel', $tel, PDO::PARAM_INT);
-    $statement->bindParam(':ext', $ext, PDO::PARAM_INT);
-    $statement->bindParam(':cel', $cel, PDO::PARAM_INT);
-    $statement->execute();
-    $row=$statement->rowCount();
+    $stcli=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE CliLab=:lab OR CliNomEm=:nom OR CliApp=:app OR CliApm=:apm LIMIT 1;");
+    $stcli->bindParam(':lab', $lab, PDO::PARAM_STR);
+    $stcli->bindParam(':nom', $nom, PDO::PARAM_STR);
+    $stcli->bindParam(':app', $app, PDO::PARAM_STR);
+    $stcli->bindParam(':apm', $apm, PDO::PARAM_STR);
+    $stcli->execute();
+    $rowcli=$stcli->rowCount();
+    $stclisl=$cnxPDO->prepare("SELECT * FROM {$tbl_clisl} WHERE Calle=:str AND NumExt=:numex AND NumInt=:numin AND Col=:col OR CP=:cp OR Loc=:loc LIMIT 1;");
+    $stclisl->bindParam(':str', $str, pdo::PARAM_STR);
+    $stclisl->bindParam(':numex', $numex, pdo::PARAM_STR);
+    $stclisl->bindParam(':numin', $numin, pdo::PARAM_STR);
+    $stclisl->bindParam(':col', $col, pdo::PARAM_STR);
+    $stclisl->bindParam(':cp', $cp, pdo::PARAM_STR);
+    $stclisl->bindParam(':loc', $loc, pdo::PARAM_STR);
+    $stclisl->execute();
+    $rowclisl=$stclisl->rowCount();
     $cnxPDO->beginTransaction();
-    if(!($row)){
-        $trcli=$cnxPDO->prepare("INSERT INTO {$tbl_clinter} VALUES (NULL, :lab, :nom, :app, :apm, :mail, :add, :tel, :ext, :cel, 1, :usr, :dt, :usr, :dt);");
-        $trcli->bindParam(':lab', $lab, PDO::PARAM_STR);
-        $trcli->bindParam(':nom', $nom, PDO::PARAM_STR);
-        $trcli->bindParam(':app', $app, PDO::PARAM_STR);
-        $trcli->bindParam(':apm', $apm, PDO::PARAM_STR);
-        $trcli->bindParam(':mail', $mail, PDO::PARAM_STR);
-        $trcli->bindParam(':add', $add, PDO::PARAM_STR);
-        $trcli->bindParam(':tel', $tel, PDO::PARAM_INT);
-        $trcli->bindParam(':ext', $ext, PDO::PARAM_INT);
-        $trcli->bindParam(':cel', $cel, PDO::PARAM_INT);
-        $trcli->bindParam(':usr', $nomusr, PDO::PARAM_STR);
-        $trcli->bindParam(':dt', $dt, PDO::PARAM_STR);
-        $trcli->execute();
+    if((!($rowcli))&&(!($rowclisl))){
+        $trclirg=$cnxPDO->prepare("INSERT INTO {$tbl_cli} VALUES (NULL,:lab,:nomcli,:nom,:app,:apm,:idint,1,:usr,:dt,:usr,:dt);");
+        $trclirg->bindParam(':lab', $lab, PDO::PARAM_STR);
+        $trclirg->bindParam(':nomcli', $nomcli, PDO::PARAM_STR);
+        $trclirg->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $trclirg->bindParam(':app', $app, PDO::PARAM_STR);
+        $trclirg->bindParam(':apm', $apm, PDO::PARAM_STR);
+        $trclirg->bindParam(':idint', $idint, PDO::PARAM_INT);
+        $trclirg->bindParam(':usr', $nomusr, PDO::PARAM_STR);
+        $trclirg->bindParam(':dt', $dt, PDO::PARAM_STR);
+        $trclirg->execute();
+        $idcli=$cnxPDO->lastInsertId();
+        $trclislrg=$cnxPDO->prepare("INSERT INTO {$tbl_clisl} VALUES (:idcli,:rfc,:add,:str,:numex,:numin,:col,:cp,:loc,:mun,:cd,:edo);");
+        $trclislrg->bindParam(':idcli', $idcli, PDO::PARAM_INT);
+        $trclislrg->bindParam(':rfc', $rfc, PDO::PARAM_STR);
+        $trclislrg->bindParam(':add', $add, PDO::PARAM_STR);
+        $trclislrg->bindParam(':str', $str, PDO::PARAM_STR);
+        $trclislrg->bindParam(':numex', $numex, PDO::PARAM_STR);
+        $trclislrg->bindParam(':numin', $numin, PDO::PARAM_STR);
+        $trclislrg->bindParam(':col', $col, PDO::PARAM_STR);
+        $trclislrg->bindParam(':cp', $cp, PDO::PARAM_INT);
+        $trclislrg->bindParam(':loc', $loc, PDO::PARAM_STR);
+        $trclislrg->bindParam(':mun', $mun, PDO::PARAM_STR);
+        $trclislrg->bindParam(':cd', $cd, PDO::PARAM_STR);
+        $trclislrg->bindParam(':edo', $edo, PDO::PARAM_STR);
+        $trclislrg->execute();
         $cnxPDO->commit();
         $message=$html->success('Datos registrados exitosamente');$fail=0;
     }else{$message=$html->info('Datos registrados previamente');$fail=1;}

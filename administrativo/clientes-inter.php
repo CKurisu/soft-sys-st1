@@ -254,5 +254,6 @@ if($rowu>0){
 		
 		</script>
 	</body>
+        <?php closeCnxP($connectionPDO);?>
 	<!-----					TERMINA EL SISTEMA					----->
 </html>

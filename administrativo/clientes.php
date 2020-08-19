@@ -282,7 +282,7 @@ if($rowu>0){
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title" id="myModalLabel"> Datos Cliente Intermedio</h3>
+                        <h3 class="modal-title" id="myModalLabel"> Datos Cliente</h3>
                     </div>
                     <form id="yui11022001" name="yui11022001" novalidate>
                         <div class="modal-body">

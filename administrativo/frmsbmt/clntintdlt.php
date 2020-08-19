@@ -29,7 +29,7 @@ try {
             $cnxPDO->commit();
             $message=$html->success('Eliminado con exito');$fail=0;
         }else{$message=$html->danger('El usuario no existe');$fail=1;}
-    }else{$message=$html->info('El usuario esta activo en un prestamo, por favor elimine primero el prestamo para continuar');$fail=1;}
+    }else{$message=$html->info('El usuario esta activo en un registro, por favor elimine primero el registro para continuar');$fail=1;}
 } catch (Exception $ex) {
     $cnxPDO->rollBack();
     $message=$html->dangerEx();

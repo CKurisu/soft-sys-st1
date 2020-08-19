@@ -40,7 +40,7 @@ try {
         $nomusr =$idusr->fetchColumn();
     }
     $lab=$_POST['x1']; $nom=$_POST['x2']; $app=$_POST['x3']; $apm=$_POST['x4']; $mail=$_POST['x5']; $add=$_POST['x6']; $tel=$_POST['x7']; $ext=$_POST['x8']; $cel=$_POST['x9'];$dt= date('Y-m-d');
-    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_clinter} WHERE Laboratorio=:lab AND Nombres=:nom AND ApPaterno=:app AND ApMaterno=:apm OR Correo=:mail AND Direccion=:add OR Telof=:tel OR Extension=:ext OR Celular=:cel LIMIT 1;");
+    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_clinter} WHERE Laboratorio=:lab AND Nombres=:nom AND ApPaterno=:app AND ApMaterno=:apm AND Correo=:mail AND Direccion=:add OR Telof=:tel OR Extension=:ext OR Celular=:cel LIMIT 1;");
     $statement->bindParam(':lab', $lab, PDO::PARAM_STR);
     $statement->bindParam(':nom', $nom, PDO::PARAM_STR);
     $statement->bindParam(':app', $app, PDO::PARAM_STR);

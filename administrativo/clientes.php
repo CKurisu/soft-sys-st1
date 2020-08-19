@@ -304,7 +304,7 @@ if($rowu>0){
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Nombre</label>
-                                    <input type="text" name="nomcli" id="nomcli" class="form-control" placeholder="Nombre" />
+                                    <input type="text" name="nomcli" id="nomcli" class="form-control" placeholder="Nombre Cliente" />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Nombre</label>
@@ -319,24 +319,44 @@ if($rowu>0){
                                     <input type="text" name="apm" id="apm" class="form-control" placeholder="Apellido Materno" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Correo Electr&oacute;nico</label>
-                                    <input type="email" name="mail" id="mail" class="form-control" placeholder="Correo Electr&oacute;nico" />
+                                    <label>RFC</label>
+                                    <input type="text" name="rfc" id="rfc" class="form-control" placeholder="RFC" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Direcci&oacute;n</label>
-                                    <input type="text" name="add" id="add" class="form-control" placeholder="Direcci&oacute;n" />
+                                    <label>Calle</label>
+                                    <input type="text" name="str" id="str" class="form-control" placeholder="Calle" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Tel&eacute;fono Oficina</label>
-                                    <input type="tel" name="telo" id="telo" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+                                    <label>Numero Exterior</label>
+                                    <input type="number" name="numex" id="numex" class="form-control" placeholder="Numero Exterior" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Extension</label>
-                                    <input type="number" name="ext" id="ext" class="form-control" placeholder="Extension" />
+                                    <label>Numero Interior</label>
+                                    <input type="number" name="numin" id="numin" class="form-control" placeholder="Numero Interior" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Celular</label>
-                                    <input type="tel" name="cel" id="cel" class="form-control" placeholder="Celular" />
+                                    <label>Colonia</label>
+                                    <input type="text" name="col" id="col" class="form-control" placeholder="Colonia" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>C.P.</label>
+                                    <input type="number" name="cp" id="cp" class="form-control" placeholder="C.P." />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Localidad</label>
+                                    <input type="text" name="loc" id="loc" class="form-control" placeholder="Localidad" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Municipio</label>
+                                    <input type="text" name="mun" id="mun" class="form-control" placeholder="Municipio" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Cuidad</label>
+                                    <input type="text" name="cd" id="cd" class="form-control" placeholder="Cuidad" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Estado</label>
+                                    <input type="text" name="edo" id="edo" class="form-control" placeholder="Estado" />
                                 </div>
                             </div>
                         </div>

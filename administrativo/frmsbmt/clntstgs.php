@@ -20,9 +20,9 @@ try {
         $stint=$cnxPDO->prepare("SELECT * FROM {$tbl_clinter};");
         $stint->setFetchMode(PDO::FETCH_NUM);
         $stint->execute();
-        while ($ret=$stint->fetch()){if($data[6]==$ret[0]){$selected=' selected';}else{$selected='';}
+        while ($ret=$stint->fetch()){if($data[3]==$ret[0]){$selected=' selected';}else{$selected='';}
             $menu.='<option value="'.$ret[0].'"'.$selected.'>'.$ret[2].' '.$ret[3].' '.$ret[4].'.</option>';}
-        if($data[7]==1){
+        if($data[4]==1){
             $status='<span class="label label-success">Activo</span>';
         }else{
             $status='<span class="label label-danger">No Activo</span>';
@@ -46,8 +46,8 @@ try {
                             <input type="text" name="labe" id="labe" class="form-control" placeholder="Laboratorio" value="'.$data[1].'"/>
                         </div>
                         <div class="form-group col-md-3">
-                            <label>Nombre del Cliente</label>
-                            <input type="text" name="nomclie" id="nomclie" class="form-control" placeholder="Nombre Cliente" value="'.$data[2].'"/>
+                            <label>Raz&oacute;n Social</label>
+                            <input type="text" name="rznscle" id="rznscle" class="form-control" placeholder="Raz&oacute;n Social" value="'.$data[2].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Cliente Intermediario</label>
@@ -57,56 +57,44 @@ try {
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label>Nombre</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nombre" value="'.$data[3].'"/>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label>Apellido Paterno</label>
-                            <input type="text" name="appe" id="appe" class="form-control" placeholder="Apellido Paterno" value="'.$data[4].'"/>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label>Apellido Materno</label>
-                            <input type="text" name="apme" id="apme" class="form-control" placeholder="Apellido Materno" value="'.$data[5].'"/>
-                        </div>
-                        <div class="form-group col-md-3">
                             <label>RFC</label>
-                            <input type="text" name="rfce" id="rfce" class="form-control" placeholder="RFC" value="'.$data[13].'"/>
+                            <input type="text" name="rfce" id="rfce" class="form-control" placeholder="RFC" value="'.$data[10].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Calle</label>
-                            <input type="text" name="stre" id="stre" class="form-control" placeholder="Calle" value="'.$data[15].'"/>
+                            <input type="text" name="stre" id="stre" class="form-control" placeholder="Calle" value="'.$data[12].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Numero Exterior</label>
-                            <input type="number" name="numexe" id="numexe" class="form-control" placeholder="Numero Exterior" value="'.$data[16].'"/>
+                            <input type="number" name="numexe" id="numexe" class="form-control" placeholder="Numero Exterior" value="'.$data[13].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Numero Interior</label>
-                            <input type="number" name="numine" id="numine" class="form-control" placeholder="Numero Interior" value="'.$data[17].'"/>
+                            <input type="number" name="numine" id="numine" class="form-control" placeholder="Numero Interior" value="'.$data[14].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Colonia</label>
-                            <input type="text" name="cole" id="cole" class="form-control" placeholder="Colonia" value="'.$data[18].'"/>
+                            <input type="text" name="cole" id="cole" class="form-control" placeholder="Colonia" value="'.$data[15].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>C.P.</label>
-                            <input type="number" name="cpe" id="cpe" class="form-control" placeholder="C.P." value="'.$data[19].'"/>
+                            <input type="number" name="cpe" id="cpe" class="form-control" placeholder="C.P." value="'.$data[16].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Localidad</label>
-                            <input type="text" name="loce" id="loce" class="form-control" placeholder="Localidad" value="'.$data[20].'"/>
+                            <input type="text" name="loce" id="loce" class="form-control" placeholder="Localidad" value="'.$data[17].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Municipio</label>
-                            <input type="text" name="mune" id="mune" class="form-control" placeholder="Municipio" value="'.$data[21].'"/>
+                            <input type="text" name="mune" id="mune" class="form-control" placeholder="Municipio" value="'.$data[18].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Cuidad</label>
-                            <input type="text" name="cde" id="cde" class="form-control" placeholder="Cuidad" value="'.$data[22].'"/>
+                            <input type="text" name="cde" id="cde" class="form-control" placeholder="Cuidad" value="'.$data[19].'"/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Estado</label>
-                            <input type="text" name="edoe" id="edoe" class="form-control" placeholder="Estado" value="'.$data[23].'"/>
+                            <input type="text" name="edoe" id="edoe" class="form-control" placeholder="Estado" value="'.$data[20].'"/>
                         </div>
                     </div>
                 </div>

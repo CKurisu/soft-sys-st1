@@ -3,9 +3,6 @@ session_start();
 if(empty($_POST['x1'])  ||
     empty($_POST['x2']) ||
     empty($_POST['x3']) ||
-    empty($_POST['x4']) ||
-    empty($_POST['x5']) ||
-    empty($_POST['x6']) ||
     empty($_POST['x7']) ||
     empty($_POST['x8']) ||
     empty($_POST['x9']) ||
@@ -34,11 +31,8 @@ try {
         $nomusr =$idusr->fetchColumn();
     }
     $lab=$_POST['x1'];
-    $nomcli=$_POST['x2'];
+    $rznscl=$_POST['x2'];
     $idint=$_POST['x3'];
-    $nom=$_POST['x4'];
-    $app=$_POST['x5'];
-    $apm=$_POST['x6'];
     $rfc=$_POST['x7'];
     $str=$_POST['x8'];
     $numex=$_POST['x9'];
@@ -51,14 +45,13 @@ try {
     $edo=$_POST['x16'];
     $add=$str.' No.'.$numex.' '.$numin.' '.$col.' '.$cp.' '.$loc.' '.$cd.' '.$edo;
     $dt= date('Y-m-d');
-    $stcli=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE CliLab=:lab OR CliNomEm=:nom OR CliApp=:app OR CliApm=:apm LIMIT 1;");
+    $stcli=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE CliLab=:lab OR RznScl=:rzn LIMIT 1;");
     $stcli->bindParam(':lab', $lab, PDO::PARAM_STR);
-    $stcli->bindParam(':nom', $nom, PDO::PARAM_STR);
-    $stcli->bindParam(':app', $app, PDO::PARAM_STR);
-    $stcli->bindParam(':apm', $apm, PDO::PARAM_STR);
+    $stcli->bindParam(':rzn', $rznscl, PDO::PARAM_STR);
     $stcli->execute();
     $rowcli=$stcli->rowCount();
-    $stclisl=$cnxPDO->prepare("SELECT * FROM {$tbl_clisl} WHERE Calle=:str AND NumExt=:numex AND NumInt=:numin AND Col=:col OR CP=:cp OR Loc=:loc LIMIT 1;");
+    $stclisl=$cnxPDO->prepare("SELECT * FROM {$tbl_clisl} WHERE RFC=:rfc AND Calle=:str AND NumExt=:numex AND NumInt=:numin AND Col=:col OR CP=:cp OR Loc=:loc LIMIT 1;");
+    $stclisl->bindParam(':rfc', $rfc, pdo::PARAM_STR);
     $stclisl->bindParam(':str', $str, pdo::PARAM_STR);
     $stclisl->bindParam(':numex', $numex, pdo::PARAM_STR);
     $stclisl->bindParam(':numin', $numin, pdo::PARAM_STR);
@@ -69,12 +62,9 @@ try {
     $rowclisl=$stclisl->rowCount();
     $cnxPDO->beginTransaction();
     if((!($rowcli))&&(!($rowclisl))){
-        $trclirg=$cnxPDO->prepare("INSERT INTO {$tbl_cli} VALUES (NULL,:lab,:nomcli,:nom,:app,:apm,:idint,1,:usr,:dt,:usr,:dt);");
+        $trclirg=$cnxPDO->prepare("INSERT INTO {$tbl_cli} VALUES (NULL,:lab,:rzn,:idint,1,:usr,:dt,:usr,:dt);");
         $trclirg->bindParam(':lab', $lab, PDO::PARAM_STR);
-        $trclirg->bindParam(':nomcli', $nomcli, PDO::PARAM_STR);
-        $trclirg->bindParam(':nom', $nom, PDO::PARAM_STR);
-        $trclirg->bindParam(':app', $app, PDO::PARAM_STR);
-        $trclirg->bindParam(':apm', $apm, PDO::PARAM_STR);
+        $trclirg->bindParam(':rzn', $rznscl, PDO::PARAM_STR);
         $trclirg->bindParam(':idint', $idint, PDO::PARAM_INT);
         $trclirg->bindParam(':usr', $nomusr, PDO::PARAM_STR);
         $trclirg->bindParam(':dt', $dt, PDO::PARAM_STR);

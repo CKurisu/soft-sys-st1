@@ -227,7 +227,7 @@ if($rowu>0){
                             <tbody>
                                 <?php
                                 try {
-                                $statement=$connectionPDO->prepare("SELECT IdCliente,Status,CliLab,CliNomEm,IdInt,CliNom,CliApp,CliApm FROM {$tbl_cli};");
+                                $statement=$connectionPDO->prepare("SELECT IdCliente,Status,CliLab,RznScl,IdInt FROM {$tbl_cli};");
                                 $statement->setFetchMode(PDO::FETCH_NUM);
                                 $statement->execute();
                                 $i=1;
@@ -246,7 +246,6 @@ if($rowu>0){
                                 <td class="tab_centrar">'.$ret[2].'</td>
                                 <td class="tab_centrar">'.$ret[3].'</td>
                                 <td class="tab_centrar">'.$ret[4].'</td>
-                                <td class="tab_centrar">'.$ret[5].' '.$ret[6].' '.$ret[7].''.'</td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-u btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-u btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-u btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>
@@ -325,8 +324,8 @@ if($rowu>0){
                                     <input type="text" name="lab" id="lab" class="form-control" placeholder="Laboratorio" />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label>Nombre del Cliente</label>
-                                    <input type="text" name="nomcli" id="nomcli" class="form-control" placeholder="Nombre Cliente" />
+                                    <label>Raz&oacute;n Social</label>
+                                    <input type="text" name="rznscl" id="rznscl" class="form-control" placeholder="Raz&oacute;n Social" />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Cliente Intermediario</label>
@@ -341,18 +340,8 @@ if($rowu>0){
                                         ?>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label>Nombre</label>
-                                    <input type="text" name="nom" id="nom" class="form-control" placeholder="Nombre" />
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label>Apellido Paterno</label>
-                                    <input type="text" name="app" id="app" class="form-control" placeholder="Apellido Paterno" />
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label>Apellido Materno</label>
-                                    <input type="text" name="apm" id="apm" class="form-control" placeholder="Apellido Materno" />
-                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="form-group col-md-3">
                                     <label>RFC</label>
                                     <input type="text" name="rfc" id="rfc" class="form-control" placeholder="RFC" />

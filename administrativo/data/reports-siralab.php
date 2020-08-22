@@ -52,11 +52,20 @@
 			<th scope="col" class="tab_centrar">Direccion informe</th>
 			<th scope="col" class="tab_centrar">Titulo de consesión </th>
 			<th scope="col" class="tab_centrar">Puntos de muestro</th>
+			<th scope="col" class="tab_centrar">Calle</th>
+			<th scope="col" class="tab_centrar">Numero Interior</th>
+			<th scope="col" class="tab_centrar">Numero Exterior </th>
+			<th scope="col" class="tab_centrar">Colonia</th>
+			<th scope="col" class="tab_centrar">Codigo postal</th>
+			<th scope="col" class="tab_centrar">Localidad </th>
+			<th scope="col" class="tab_centrar">Municipio</th>
+			<th scope="col" class="tab_centrar">Ciudad</th>
+			<th scope="col" class="tab_centrar">Estado </th>
 			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
 	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
-            id="nuevoAlumno"><i class="fas fa-plus"></i></button>
+            id="nuevoAlumno"><i class="fas fa-plus">Agregar</i></button>
        <tbody>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
@@ -64,9 +73,18 @@
             <td class="tab_centrar"></td>
             <td class="tab_centrar"></td>
             <td class="tab_centrar"></td>
+			<td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+			<td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+			<td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
+            <td class="tab_centrar"></td>
    
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i></a></td>
-			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar<i class="fas fa-edit"></i></a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a>Eliminar</td>
        	</tr>
 		<?php
 			/*$x=0;

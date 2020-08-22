@@ -33,7 +33,7 @@ try {
                     <div class="row">
                         <div class="form-group col-md-3">
                             <label>ID Cliente</label>
-                            <input type="number" name="code" id="code" class="form-control" placeholder="00001243" value="'.$data[0].'" readonly/>
+                            <input type="number" name="code" id="code" class="form-control" placeholder="00001243" value="'.$id.'" readonly/>
                         </div>
                         <div class="form-group col-md-3">
                             <label>Status</label>

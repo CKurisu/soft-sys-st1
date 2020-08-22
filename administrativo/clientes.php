@@ -26,7 +26,7 @@ if($rowu>0){
     </head>
     <!-----					COMIENZA EL CUERPO DEL SISTEMA					----->
     <body class="hold-transition skin-blue sidebar-mini">
-        <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalDetalleree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
                     <div class="modal-header">
@@ -390,6 +390,22 @@ if($rowu>0){
                             <button type="submit" class="btn btn-warning" id="guardarnuevo">Eliminar</button>-->
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ModalDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"> Detalle de Registro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="info-u"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                    </div>
                 </div>
             </div>
         </div>

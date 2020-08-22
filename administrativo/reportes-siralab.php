@@ -1,4 +1,13 @@
-<?php	session_start();
+<?php	session_start();	?>
+<!-----------------------------------------------------------
+-----													-----
+-----		LIDER DE PROYECTO: SAUL ARROYO G.			-----
+-----		PROGRAMADORA: KATERIN CAROLINA PEREZ CRUZ	-----
+-----		ThE SaG Corp								-----
+-----		INDEX										-----
+-----													-----
+------------------------------------------------------------>
+<?php
 	include("../cnx.php");
 	$sag=cnx();
 	
@@ -47,16 +56,16 @@
 				<section class="content-header">
 					<center class="titulo">
 						<?php
-							switch($_SESSION["tp"])
+							switch($_SESSION['tp'])
 							{
 								case 1:
-									echo 'Lista de Usuarios';
+									echo ' Cliente siralab';
 								break;
 								case 2:
-									echo 'Nuevo Usuario';
+									echo 'Nuevo Alumno';
 								break;
 								case 3:
-									echo 'Lista de Usuarios';
+									echo 'Lista de Alumnos';
 								break;
 							}
 						?>
@@ -66,18 +75,17 @@
 				<!----------     TITULO     ---------->
 				<section class="content">
 					<?php
-						switch($_SESSION["tp"])
+						switch($_SESSION['tp'])
 						{
 							case 1:
-								include("alu_lista.php");
+								include("data/reports-siralab.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");
 								include("alu_nuevo.php");
 							break;
 							case 3:
-								// include("alu_nuevog.php");
-								include("alu_modificar.php");
+								include("alu_nuevog.php");
 								include("alu_lista.php");
 							break;
 						}

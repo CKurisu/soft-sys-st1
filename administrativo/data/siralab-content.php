@@ -47,7 +47,7 @@
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr class="tab_tr">
-			<th scope="col" class="tab_centrar">Id ounto de muestreo</th>
+			<th scope="col" class="tab_centrar">Id punto de muestreo</th>
             <th scope="col" class="tab_centrar">Estatus</th>
 			<th scope="col" class="tab_centrar">Titulo de consesión</th>
 			<th scope="col" class="tab_centrar">Puntos de muestreo</th>
@@ -63,8 +63,12 @@
            			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
+	<div class="form-group col-sm-6">
+						<label>Busqueda avanzada</label>
+						<input type="text" name="beca" id="beca" class="form-control" placeholder=" introduce " />
+					</div>
 	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal"
-            id="nuevoAlumno"><i class="fas fa-plus"></i></button>
+            id="nuevoAlumno"><i class="fas fa-plus"></i>Agregar</button>
        <tbody>
        	<tr class="tab_td">
        		<th scope="row" class="tab_centrar"></th>
@@ -80,8 +84,8 @@
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
        		<td class="tab_centrar"></td>
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i></a></td>
-			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a></td>
+			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
+			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i>Eliminar</a></td>
        	</tr>
 		<?php
 			/*$x=0;

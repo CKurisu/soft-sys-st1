@@ -89,7 +89,7 @@ try {
     }else{$message=$html->info('Informacion incorrecta');$fail=1;}
 } catch (Exception $e) {
     $cnxPDO->rollBack();
-    $message=$html->danger($e->getMessage());$fail=1;
+    $message=$html->dangerEx();$fail=1;
 }
 closeCnxP($cnxPDO);
 $returnArray=array("message"=>$message, "fail" => $fail);

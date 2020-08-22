@@ -56,16 +56,16 @@
 				<section class="content-header">
 					<center class="titulo">
 						<?php
-							switch($_SESSION['tp'])
+							switch($_SESSION["tp"])
 							{
 								case 1:
-									echo 'Lista de Departamentos';
+									echo 'Lista de Usuarios';
 								break;
 								case 2:
-									echo 'Nuevo Alumno';
+									echo 'Nuevo Usuario';
 								break;
 								case 3:
-									echo 'Lista de Alumnos';
+									echo 'Lista de Usuarios';
 								break;
 							}
 						?>
@@ -75,17 +75,18 @@
 				<!----------     TITULO     ---------->
 				<section class="content">
 					<?php
-						switch($_SESSION['tp'])
+						switch($_SESSION["tp"])
 						{
 							case 1:
-								include("data/departament.php");
+								include("alu_lista.php");
 							break;
 							case 2:
 								include("alu_nuevo.php");
 								include("alu_nuevo.php");
 							break;
 							case 3:
-								include("alu_nuevog.php");
+								// include("alu_nuevog.php");
+								include("alu_modificar.php");
 								include("alu_lista.php");
 							break;
 						}

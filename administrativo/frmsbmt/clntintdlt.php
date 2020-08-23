@@ -13,7 +13,7 @@ try {
     $cnxPDO= initCnx();
     $id=$_POST['v'];
     $cnxPDO->beginTransaction();
-    $stmt=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE IdIntermediario=:id;");
+    $stmt=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE IdInt=:id;");
     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
     $stmt->execute();
     $result=$stmt->rowCount();

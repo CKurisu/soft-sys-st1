@@ -77,118 +77,6 @@ if($rowu>0){
 		</div>
             </div>
         </div>
-        <div class="modal fade" id="DetalleCli" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title" id="myModalLabel"> Datos Cliente</h3>
-                    </div>
-                    <div class="modal-body">
-                        <label>Id Cliente</label> 1297384
-                        <label>Estatus</label> <span class="label label-success">Activo</span>
-                        <div class="table">
-                    <table class="table table-bordered table-hover table-responsive">
-                        <thead>
-                            <tr class="tab_tr">
-                                <th scope="col" class="tab_centrar">Nombre Cliente</th>
-                                <th scope="col" class="tab_centrar">Intermediario</th>
-                                <th scope="col" class="tab_centrar">Estado</th>
-                                <th scope="col" class="tab_centrar">Tipo Cliente</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-//                            try {
-//                            $connectionPDO= initCnx();
-//                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
-//                            $statement->setFetchMode(PDO::FETCH_NUM);
-//                            $statement->execute();
-//                            $i=1;
-//                            while ($ret=$statement->fetch()){
-//                            echo '<tr class="tab_td">
-//                            <td class="tab_centrar">'.$ret[0].'</td>
-//                            <td class="tab_centrar">'.$ret[1].'</td>
-//                            <td class="tab_centrar">'.$ret[2].' '.$ret[3].' '.$ret[4].''.'</td>
-//                            <td class="tab_centrar">'.$ret[5].'</td>
-//                            <td class="tab_centrar">'.$ret[6].'</td>
-//                            <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
-//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
-//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
-//                            <td class="tab_centrar"><nutton href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
-//                            </tr>';
-//                            $i++;
-//                            }
-//                            unset($connectionPDO);} catch (Exception $ex) {
-//                            echo $ex->getMessage();
-//                            }
-                        ?>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
-                        <button data-toggle="modal" data-target="#DetalleCli2" class="btn azul"><i class="fas fa-info"></i> Mas Detalle</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="DetalleCli2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="modal-title" id="myModalLabel"> Datos Cliente</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="table">
-                    <table class="table table-bordered table-hover table-responsive">
-                        <thead>
-                            <tr class="tab_tr">
-                                <th scope="col" class="tab_centrar">RFC</th>
-                                <th scope="col" class="tab_centrar">Direccion/Informe Cotizacion</th>
-                                <th scope="col" class="tab_centrar">Status</th>
-                                <th scope="col" class="tab_centrar">Direccion</th>
-                                <th scope="col" class="tab_centrar">Puntos de Muestreo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-//                            try {
-//                            $connectionPDO= initCnx();
-//                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
-//                            $statement->setFetchMode(PDO::FETCH_NUM);
-//                            $statement->execute();
-//                            $i=1;
-//                            while ($ret=$statement->fetch()){
-//                            echo '<tr class="tab_td">
-//                            <td class="tab_centrar">'.$ret[0].'</td>
-//                            <td class="tab_centrar">'.$ret[1].'</td>
-//                            <td class="tab_centrar">'.$ret[2].' '.$ret[3].' '.$ret[4].''.'</td>
-//                            <td class="tab_centrar">'.$ret[5].'</td>
-//                            <td class="tab_centrar">'.$ret[6].'</td>
-//                            <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
-//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
-//                            <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn cafe"><i class="fas fa-edit"></i> Modificar</a></td>
-//                            <td class="tab_centrar"><nutton href="#" class="btn rojo"><i class="fas fa-times-circle"></i> Eliminar</a></td>
-//                            </tr>';
-//                            $i++;
-//                            }
-//                            unset($connectionPDO);} catch (Exception $ex) {
-//                            echo $ex->getMessage();
-//                            }
-                        ?>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="wrapper">	
             <!----------     AQUI COMIENZA EL HEADER     ---------->
             <header class="main-header">
@@ -434,6 +322,72 @@ if($rowu>0){
                     <div class="modal-footer">
                         <button type="button" class="btn-dlst2-u btn btn-danger" data-id=""><i class="fas fa-times-circle"></i> Eliminar</button>
                         <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> Cerrar</span></button>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="DetalleCli" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="myModalLabel"> Informaci&oacute;n de Cliente</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div id="info-dtl-u"></div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
+                        <a href="clientes-informe.php"><button class="btn azul"><i class="fas fa-info"></i> Reporte de Cliente</button></a>
+                        <button data-toggle="modal" data-target="#ReporteCliente" class="btn-rpt-cli btn azul" data-id=""><i class="fas fa-info"></i> Reporte Cliente Modal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="DetalleCli2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="myModalLabel"> Informaci&oacute;n de Cliente SirLab</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div id="info-dtls-u"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
+                        <a href="reportes-siralab.php"><button class="btn azul"><i class="fas fa-info"></i> Reporte SirLab</button></a>
+                        <button data-toggle="modal" data-target="#ReporteSirLab" class="btn-rpt-slb btn azul" data-id=""><i class="fas fa-info"></i> Reporte SirLab Modal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ReporteCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="myModalLabel"> Reporte de Cliente</h3>
+                    </div>
+                    <div class="modal-body" id="rpt-cli">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ReporteSirLab" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title" id="myModalLabel"> Reporte SirLab</h3>
+                    </div>
+                    <div class="modal-body" id="rpt-slb">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Cerrar</span></button>
                     </div>
                 </div>
             </div>

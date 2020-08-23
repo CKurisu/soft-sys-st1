@@ -28,7 +28,15 @@ try {
         $message='<div class="row"><div class="form-group col-md-3"><label>ID Cliente</label>
                 <input type="text"class="form-control" readonly value="'.$data[0].'"/></div>
             <div class="form-group col-md-3"><label>Status</label>
-                <div>'.$status.'</div><br /></div></div>
+                <div>'.$status.'</div><br /></div>
+                    <div class="form-group col-md-3">
+                            <label></label>
+                            <button data-toggle="modal" data-target="#DetalleCli" class="btn-dtl-u btn azul" data-id="'.$data[0].'"><i class="fas fa-info"></i> Detalle de cliente</button>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label></label>
+                            <button data-toggle="modal" data-target="#DetalleCli2" class="btn-dtls-u btn azul" data-id="'.$data[0].'"><i class="fas fa-info"></i> Cliente SirLab</button>
+                        </div></div>
             <div class="row"><div class="form-group col-md-3"><label>Creado por:</label>
                 <input type="text" class="form-control"readonly value="'.$data[5].'"/></div>
             <div class="form-group col-md-3"><label>Fecha:</ label>

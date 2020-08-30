@@ -30,7 +30,6 @@ try {
                                 <th scope="col" class="tab_centrar">Nombre Cliente</th>
                                 <th scope="col" class="tab_centrar">Intermediario</th>
                                 <th scope="col" class="tab_centrar">Estado</th>
-                                <th scope="col" class="tab_centrar">Tipo Cliente</th>
                             </tr>
                         </thead>
                         <tbody>

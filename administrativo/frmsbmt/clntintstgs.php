@@ -16,6 +16,7 @@ try {
     $resultset=$statement->rowCount();
     if($resultset){
         $data=$statement->fetch(PDO::FETCH_NUM);
+        if($data[1]=='matriz'){$menu.='<option value="matriz" selected>Matriz</option><option value="sucursal">Sucursal</option>';}else{$menu.='<option value="matriz">Matriz</option><option value="sucursal" selected>Sucursal</option>';}
         if($data[10]==1){
             $status='<span class="label label-success">Activo</span>';
         }else{
@@ -37,7 +38,10 @@ try {
             <div class="row">
                 <div class="form-group col-md-3">
                     <label>Laboratorio</label>
-                    <input type="text" name="labe" id="labe" class="form-control" placeholder="Laboratorio" value="'.$data[1].'"/>
+                    <select class="form-control" name="labe">
+                        <option value="">(Seleccione)</option>
+                        '.$menu.'
+                    </select>
                 </div>
                 <div class="form-group col-md-3">
                     <label>Nombre</label>

@@ -7,6 +7,7 @@
 <script type="text/javascript">
     $(function (){
     $('.input-daterange').datepicker({
+        format: 'mm-dd-yyyy',
         autoclose: true,
         todayHighlight: true
     });

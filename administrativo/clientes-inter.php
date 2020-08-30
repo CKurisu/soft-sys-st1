@@ -48,7 +48,7 @@ if($rowu>0){
                 <!----------     TITULO     ---------->
                 <section class="content">
                     <div class="table">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover" id="t-int">
                             <thead>
                                 <tr class="tab_tr">
                                     <th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
@@ -60,12 +60,24 @@ if($rowu>0){
                                     <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
                                 </tr>
                             </thead>
+                            <div class="col-md-3 col-sm-3 col-lg-3 form-search">
+                                <i class="fas fa-calendar"></i> Busqueda Periodo
+                                <div class="input-daterange input-group" id="datepicker">
+                                    <input type="text" class="form-control" name="start" id="start" placeholder="Fecha Inicio"/>
+                                    <span class="input-group-addon">a</span>
+                                    <input type="text" class="form-control" name="end" id="end" placeholder="Fecha Fin"/>
+                                </div>
+                                <button class="btn-tblint-fild btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 form-search">
+                                <i class="fas fa-search"></i> Busqueda Avanzada 
+                                <input type="text" class="fil-list-src-cliint form-control" placeholder="Buscar...">
+                            </div>
                             <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
                             <tbody>
                             <?php
                             try {
-                            $connectionPDO= initCnx();
-                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular FROM {$tbl_clinter};");
+                            $statement=$connectionPDO->prepare("SELECT IdusuarioIntermediario,Laboratorio,Nombres,ApPaterno,ApMaterno,Correo,Direccion,Telof,Extension,Celular,FechaReg,FechaEdit FROM {$tbl_clinter};");
                             $statement->setFetchMode(PDO::FETCH_NUM);
                             $statement->execute();
                             $i=1;
@@ -77,13 +89,14 @@ if($rowu>0){
                             <td class="tab_centrar">'.$ret[5].'</td>
                             <td class="tab_centrar">'.$ret[6].'</td>
                             <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
+                            <td class="tab_centrar">'. date('d-m-Y',strtotime($ret[10])).'</td>
+                            <td class="tab_centrar">'.date('d-m-Y',strtotime($ret[11])).'</td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-uint btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-uint btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>
                             </tr>';
                             $i++;
-                            }
-                            unset($connectionPDO);} catch (Exception $ex) {
+                            }} catch (Exception $ex) {
                             echo $ex->getMessage();
                             }
                             ?>
@@ -159,7 +172,11 @@ if($rowu>0){
 					<div class="row">
                                             <div class="form-group col-md-3">
                                                 <label>Laboratorio</label>
-                                                <input type="text" name="lab" id="lab" class="form-control" placeholder="Laboratorio" />
+                                                <select class="form-control" name="lab">
+                                                    <option value="">(Seleccione)</option>
+                                                    <option value="matriz">Matriz</option>
+                                                    <option value="sucursal">Sucursal</option>
+                                                </select>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Nombre</label>
@@ -183,7 +200,7 @@ if($rowu>0){
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Tel&eacute;fono Oficina</label>
-                                                <input type="tel" name="telo" id="telo" class="form-control" placeholder="Tel&eacute;fono Oficina" />
+                                                <input type="number" name="telo" id="telo" class="form-control" placeholder="Tel&eacute;fono Oficina" />
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Extension</label>
@@ -191,7 +208,7 @@ if($rowu>0){
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label>Celular</label>
-                                                <input type="tel" name="cel" id="cel" class="form-control" placeholder="Celular" />
+                                                <input type="number" name="cel" id="cel" class="form-control" placeholder="Celular" />
                                             </div>
                                         </div>
                                     </div>

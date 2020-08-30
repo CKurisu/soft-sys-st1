@@ -11,7 +11,7 @@ try {
     $cnxPDO= initCnx();
     $id=$_POST['i'];
     $menu="";
-    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} INNER JOIN {$tbl_clisl} ON {$tbl_clisl}.IdCliente=:id LIMIT 1;");
+    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} INNER JOIN {$tbl_dtcli} ON {$tbl_dtcli}.IdCliente=:id LIMIT 1;");
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
     $resultset=$statement->rowCount();

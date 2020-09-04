@@ -71,7 +71,8 @@ if($rowu>0){
                             </div>
                             <div class="col-md-3 col-sm-3 col-lg-3 form-search">
                                 <i class="fas fa-search"></i> Busqueda Avanzada 
-                                <input type="text" class="fil-list-src-cliint form-control" placeholder="Buscar...">
+                                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar...">
+                                <button class="fil-list-src-cliint btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
                             </div>
                             <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
                             <tbody>
@@ -89,8 +90,8 @@ if($rowu>0){
                             <td class="tab_centrar">'.$ret[5].'</td>
                             <td class="tab_centrar">'.$ret[6].'</td>
                             <td class="tab_centrar">Tel.:'.$ret[7].' Ext.:'.$ret[8].' cel.:'.$ret[9].'</td>
-                            <td class="tab_centrar">'. date('d-m-Y',strtotime($ret[10])).'</td>
-                            <td class="tab_centrar">'.date('d-m-Y',strtotime($ret[11])).'</td>
+                            <td class="tab_centrar hidden">'. date('d-m-Y',strtotime($ret[10])).'</td>
+                            <td class="tab_centrar hidden">'.date('d-m-Y',strtotime($ret[11])).'</td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-uint btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-uint btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
                             <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-uint btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>

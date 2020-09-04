@@ -105,13 +105,13 @@ if($rowu>0){
                                     <th scope="col" class="tab_centrar">ID</th>
                                     <th scope="col" class="tab_centrar">Estatus</th>
                                     <th scope="col" class="tab_centrar">Laboratorio</th>
-                                    <th scope="col" class="tab_centrar">Nombre</th>
                                     <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
+                                    <th scope="col" class="tab_centrar">RFC</th>
                                     <th scope="col" class="tab_centrar">Nombre</th>
                                     <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
                                 </tr>
                             </thead>
-                            <div class="col-md-3 col-sm-3 col-lg-3 form-search">
+                            <div class="col-md-4 col-sm-4 col-lg-4 form-search">
                                 <i class="fas fa-calendar"></i> Busqueda Periodo
                                 <div class="input-daterange input-group" id="datepicker">
                                     <input type="text" class="form-control" name="start" id="start" placeholder="Fecha Inicio"/>
@@ -122,13 +122,14 @@ if($rowu>0){
                             </div>
                             <div class="col-md-3 col-sm-3 col-lg-3 form-search">
                                 <i class="fas fa-search"></i> Busqueda Avanzada 
-                                <input type="text" class="fil-list-src-cli form-control" placeholder="Buscar...">
+                                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar...">
+                                <button class="fil-list-src-cli btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
                             </div>
                             <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#ModalNuevo" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
                             <tbody>
                                 <?php
                                 try {
-                                $statement=$connectionPDO->prepare("SELECT IdCliente,Status,CliLab,RznScl,IdInt FROM {$tbl_cli};");
+                                $statement=$connectionPDO->prepare("SELECT DISTINCT {$tbl_cli}.IdCliente,Status,CliLab,IdInt,RFC,RznScl,CliDateReg,CliDateMod FROM {$tbl_cli} INNER JOIN {$tbl_dtcli} ON {$tbl_cli}.idCliente={$tbl_dtcli}.idCliente;");
                                 $statement->setFetchMode(PDO::FETCH_NUM);
                                 $statement->execute();
                                 $i=1;
@@ -147,6 +148,9 @@ if($rowu>0){
                                 <td class="tab_centrar">'.$ret[2].'</td>
                                 <td class="tab_centrar">'.$ret[3].'</td>
                                 <td class="tab_centrar">'.$ret[4].'</td>
+                                <td class="tab_centrar">'.$ret[5].'</td>
+                                <td class="tab_centrar hidden">'. date('d-m-Y',strtotime($ret[6])).'</td>
+                                <td class="tab_centrar hidden">'.date('d-m-Y',strtotime($ret[7])).'</td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalDetalle" class="btn-info-u btn azul" data-id="'.$ret[0].'"><i class="fas fa-info"></i> Detalle</button></td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalModificar" class="btn-sttng-u btn cafe"  data-id="'.$ret[0].'"><i class="fas fa-edit"></i> Modificar</a></td>
                                 <td class="tab_centrar"><button data-toggle="modal" data-target="#ModalEliminar" class="btn-dlst1-u btn rojo" data-id="'.$ret[0].'"><i class="fas fa-times-circle"></i> Eliminar</a></td>

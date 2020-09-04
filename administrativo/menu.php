@@ -29,7 +29,7 @@
 					</li>
 					  
 				</ul>
-			</li><?php	include("alu_nuevo.php");	?>
+			</li>
 
 			<li class="treeview">
 				<a href="#">

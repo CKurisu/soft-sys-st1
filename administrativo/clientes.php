@@ -122,8 +122,10 @@ if($rowu>0){
                             </div>
                             <div class="col-md-3 col-sm-3 col-lg-3 form-search">
                                 <i class="fas fa-search"></i> Busqueda Avanzada 
-                                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar...">
+                                <form name="filterF" id="filterF" novalidate>
+                                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar..."/>
                                 <button class="fil-list-src-cli btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
+                                </form>
                             </div>
                             <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#ModalNuevo" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
                             <tbody>

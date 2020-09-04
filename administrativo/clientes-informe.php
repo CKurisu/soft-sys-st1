@@ -55,7 +55,7 @@ session_start();
 				<section class="content">
 					<div class="modal-body">
     <div class="table-responsive">
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered" id="t-infc">
             <thead>
                 <tr class="tab_tr">
                     <th scope="col" class="tab_centrar">Estatus</th>
@@ -65,6 +65,20 @@ session_start();
                     <th scope="col" class="tab_centrar">Puntos De Muestreo</th>
                 </tr>
             </thead>
+            <div class="col-md-4 col-sm-4 col-lg-4 form-search">
+                <i class="fas fa-calendar"></i> Busqueda Periodo
+                <div class="input-daterange input-group" id="datepicker">
+                    <input type="text" class="form-control" name="start" id="start" placeholder="Fecha Inicio"/>
+                    <span class="input-group-addon">a</span>
+                    <input type="text" class="form-control" name="end" id="end" placeholder="Fecha Fin"/>
+                </div>
+                <button class="btn-tblinfc-fild btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
+            </div>
+            <div class="col-md-3 col-sm-3 col-lg-3 form-search">
+                <i class="fas fa-search"></i> Busqueda Avanzada 
+                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar...">
+                <button class="fil-list-src-infc btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
+            </div>
             <tbody>
                 <tr class="tab_td">
                     <th scope="row" class="tab_centrar"></th>

@@ -92,7 +92,7 @@ body
 /**********************************************/
 /***************     TABLAS     ***************/
 /**********************************************/
-.tab_td{	background: #ffffff;	}
+.tab_td{ text-align: center !important;	background: #ffffff;	}
 .tab_td:hover{	background: #ced8e4;	}
 .tab_centrar{	text-align: center;		}
 .tab_tr

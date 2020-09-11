@@ -101,21 +101,19 @@ include("../cnx.php");
                                     <table class="table table-bordered table-hover" id="t-infsl">
 	<thead>
 		<tr class="tab_tr">
-			<th scope="col" class="tab_centrar">RFC</th>
-            <th scope="col" class="tab_centrar">Status</th>
-			<th scope="col" class="tab_centrar">Direccion informe</th>
-			<th scope="col" class="tab_centrar">Titulo de consesión </th>
-			<th scope="col" class="tab_centrar">Puntos de muestro</th>
-			<th scope="col" class="tab_centrar">Calle</th>
-			<th scope="col" class="tab_centrar">Numero Interior</th>
-			<th scope="col" class="tab_centrar">Numero Exterior </th>
-			<th scope="col" class="tab_centrar">Colonia</th>
-			<th scope="col" class="tab_centrar">Codigo postal</th>
-			<th scope="col" class="tab_centrar">Localidad </th>
-			<th scope="col" class="tab_centrar">Municipio</th>
-			<th scope="col" class="tab_centrar">Ciudad</th>
-			<th scope="col" class="tab_centrar">Estado </th>
-			<th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
+                    <th scope="col" class="tab_centrar">Status</th>
+                    <th scope="col" class="tab_centrar">ID Puntos de Muestreo</th>
+                    <th scope="col" class="tab_centrar">Titulo Concesi&oacute;n</th>
+                    <th scope="col" class="tab_centrar">Puntos de muestro</th>
+                    <th scope="col" class="tab_centrar">Anexo</th>
+                    <th scope="col" class="tab_centrar">SIRALAB</th>
+                    <th scope="col" class="tab_centrar">Solido</th>
+                    <th scope="col" class="tab_centrar">Cuerpo Receptor</th>
+                    <th scope="col" class="tab_centrar">Uso de Agua</th>
+                    <th scope="col" class="tab_centrar">Observaciones</th>
+                    <th scope="col" class="tab_centrar">Fecha Inicio</th>
+                    <th scope="col" class="tab_centrar">Fecha Termino</th>
+                    <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
 		</tr>
 	</thead>
         <div class="col-md-4 col-sm-4 col-lg-4 form-search">
@@ -135,23 +133,20 @@ include("../cnx.php");
 	 <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#Nuevomodal" id="nuevoAlumno"><i class="fas fa-plus">Agregar</i></button>
        <tbody>
        	<tr class="tab_td">
-       		<th scope="row" class="tab_centrar"></th>
-       		<td class="tab_centrar"><span class="label label-success">Activo</span></td>
-            <td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-			<td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-			<td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-			<td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-            <td class="tab_centrar"></td>
-   
-			<td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar<i class="fas fa-edit"></i></a></td>
-			<td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a>Eliminar</td>
+            <th scope="row" class="tab_centrar"><span class="label label-success">Activo</span></th>
+       		<td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"></td>
+                <td class="tab_centrar"><a data-toggle="modal" data-target="#ModalModificar" class="btn cafe">Modificar<i class="fas fa-edit"></i></a></td>
+                <td class="tab_centrar"><a href="#" class="btn rojo"><i class="fas fa-times-circle"></i></a>Eliminar</td>
        	</tr>
 		<?php
 			/*$x=0;

@@ -60,8 +60,8 @@ session_start();
                 <tr class="tab_tr">
                     <th scope="col" class="tab_centrar">Estatus</th>
                     <th scope="col" class="tab_centrar">RFC</th>
-                    <th scope="col" class="tab_centrar">Direccion</th>
                     <th scope="col" class="tab_centrar">Direccion Informe / Cotizacion</th>
+                    <th scope="col" class="tab_centrar">Direccion</th>
                     <th scope="col" class="tab_centrar">Puntos De Muestreo</th>
                 </tr>
             </thead>
@@ -81,8 +81,8 @@ session_start();
             </div>
             <tbody>
                 <tr class="tab_td">
-                    <th scope="row" class="tab_centrar"></th>
-                    <td class="tab_centrar"><span class="label label-success">Activo</span</td>
+                    <th scope="row" class="tab_centrar"><span class="label label-success">Activo</span></th>
+                    <td class="tab_centrar"></td>
                     <td class="tab_centrar"></td>
                     <td class="tab_centrar"></td>
                     <td class="tab_centrar"></td>

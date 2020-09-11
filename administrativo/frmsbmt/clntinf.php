@@ -25,26 +25,34 @@ try {
         }else{
             $status='<span class="label label-danger">No Activo</span>';
         }
-        $message='<div class="row"><div class="form-group col-md-3"><label>ID Cliente</label>
-                <input type="text"class="form-control" readonly value="'.$data[0].'"/></div>
-            <div class="form-group col-md-3"><label>Status</label>
-                <div>'.$status.'</div><br /></div>
-                    <div class="form-group col-md-3">
+        $message='<div class="col-md-3"><label>Id Cliente</label> '.$data[0].'
+                    <label>Estatus</label> '.$status.'</div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="tab_tr">
+                                <th scope="col" class="tab_centrar">Creado por</th>
+                                <th scope="col" class="tab_centrar">Fecha de Creaci&oacute;n</th>                                
+                                <th scope="col" class="tab_centrar">Modificado por</th>
+                                <th scope="col" class="tab_centrar">Fecha de Modificaci&oacute;n</th>                                
+                            </tr>
+                        </thead>
+                        <div class="form-group col-md-3" style="float:right;">
                             <label></label>
                             <button data-toggle="modal" data-target="#DetalleCli" class="btn-dtl-u btn azul" data-id="'.$data[0].'"><i class="fas fa-info"></i> Detalle de cliente</button>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-3" style="float:right;">
                             <label></label>
                             <button data-toggle="modal" data-target="#DetalleCli2" class="btn-dtls-u btn azul" data-id="'.$data[0].'"><i class="fas fa-info"></i> Cliente SirLab</button>
-                        </div></div>
-            <div class="row"><div class="form-group col-md-3"><label>Creado por:</label>
-                <input type="text" class="form-control"readonly value="'.$data[5].'"/></div>
-            <div class="form-group col-md-3"><label>Fecha:</ label>
-                <input type="text" class="form-control" readonly value="'.$daterf.'"/></div>
-            <div class="form-group col-md-3"><label>Editado por:</label>
-                <input type="text" class="form-control" readonly value="'.$data[7].'"/></div> 
-            <div class="form-group col-md-3"><label>Fecha:</label>
-                <input type="text" class="form-control" readonly value="'.$dateef.'"/></div></div>';        
+                        </div>
+                        <tbody>
+                            <tr class="tab_td">
+                                <td>'.$data[5].'</td>
+                                <td>'.$daterf.'</td>
+                                <td>'.$data[7].'</td>
+                                <td>'.$dateef.'</td>
+                            </tr>
+                        </tbody>
+                    </table>';        
     }else{$message=$html->info('No se encontraron datos');$fail=1;}
 } catch (Exception $e) {
     $message=$html->dangerEx();$fail=1;

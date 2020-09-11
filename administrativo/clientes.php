@@ -98,6 +98,7 @@ if($rowu>0){
                 </section>
                 <!----------     TITULO     ---------->
                 <section class="content">
+                    
                     <div class="table">
                         <table class="table table-bordered table-hover" id="t-cli">
                             <thead>
@@ -120,12 +121,11 @@ if($rowu>0){
                                 </div>
                                 <button class="btn-tblcli-fild btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
                             </div>
+                            
                             <div class="col-md-3 col-sm-3 col-lg-3 form-search">
-                                <i class="fas fa-search"></i> Busqueda Avanzada 
-                                <form name="filterF" id="filterF" novalidate>
-                                <input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar..."/>
-                                <button class="fil-list-src-cli btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
-                                </form>
+                                    <i class="fas fa-search"></i> Busqueda Avanzada
+                                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                                    <button class="fil-list-src-cli btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button>
                             </div>
                             <button class="btn btn-primary btn-tbl" data-toggle="modal" data-target="#ModalNuevo" id="nuevoAlumno"><i class="fas fa-plus"></i> Agregar</button>
                             <tbody>

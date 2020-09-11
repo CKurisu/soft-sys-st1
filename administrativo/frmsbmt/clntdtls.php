@@ -10,7 +10,7 @@ try {
     $html=new htmsg();
     $cnxPDO= initCnx();
     $id=$_POST['i'];
-    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} WHERE IdCliente=:id LIMIT 1;");
+    $statement=$cnxPDO->prepare("SELECT * FROM {$tbl_cli} INNER JOIN {$tbl_dtcli} ON {$tbl_cli}.idCliente={$tbl_dtcli}.idCliente WHERE {$tbl_cli}.idCliente=:id LIMIT 1;");
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
     $resultset=$statement->rowCount();
@@ -27,6 +27,15 @@ try {
                             <tr class="tab_tr">
                                 <th scope="col" class="tab_centrar">RFC</th>
                                 <th scope="col" class="tab_centrar">Direccion/Informe Cotizacion</th>
+                                <th scope="col" class="tab_centrar">Calle</th>
+                                <th scope="col" class="tab_centrar">Numero Exterior</th>
+                                <th scope="col" class="tab_centrar">Numero Interior</th>
+                                <th scope="col" class="tab_centrar">Colonia</th>
+                                <th scope="col" class="tab_centrar">C.P.</th>
+                                <th scope="col" class="tab_centrar">Localidad</th>
+                                <th scope="col" class="tab_centrar">Municipio</th>
+                                <th scope="col" class="tab_centrar">Cuidad</th>
+                                <th scope="col" class="tab_centrar">Estado</th>
                                 <th scope="col" class="tab_centrar">Status</th>
                                 <th scope="col" class="tab_centrar">Direccion</th>
                                 <th scope="col" class="tab_centrar">Puntos de Muestreo</th>

@@ -5,13 +5,13 @@
 </a>
 
 <?php
-	switch($_SESSION['lvl'])
+	switch($_SESSION['tpus'])
 	{
-		case 1:
-			$lvl = "Director";
+                case 1:
+			$lvl = "Administrativo";
 		break;
 		case 2:
-			$lvl = "Administrativo";
+			$lvl = "Director";
 		break;
 		case 3:
 			$lvl = "Caja";
@@ -34,13 +34,13 @@
 		<ul class="nav navbar-nav">
 			<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					<img src="../fotos/<?php	echo $id;	?>.png" class="user-image" alt="User Image">
-					<span class="hidden-xs"><?php	echo $nom;	?></span>
+					<img src="../fotos/<?php	echo $_SESSION["idus"];	?>.png" class="user-image" alt="User Image">
+					<span class="hidden-xs"><?php	echo $_SESSION["nmus"];	?></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li class="user-header">
-						<img src="../fotos/<?php	echo $id;	?>.png" class="img-circle" alt="User Image">
-						<p><?php	echo $nom." <br/> ".$lvl;	?>
+						<img src="../fotos/<?php	echo $_SESSION["idus"];	?>.png" class="img-circle" alt="User Image">
+						<p><?php	echo $_SESSION["nomus"]." <br/> ".$lvl;	?>
 						<br/><small>Sistema de Laboratorios</small>
 						</p>
 					</li>

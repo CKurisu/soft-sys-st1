@@ -3,12 +3,27 @@
         <table class="table table-bordered table-hover" id="t-cli">
             <thead>
                 <tr class="tab_tr">
-                    <th scope="col" class="tab_centrar">ID</th>
-                    <th scope="col" class="tab_centrar">Estatus</th>
-                    <th scope="col" class="tab_centrar">Laboratorio</th>
-                    <th scope="col" class="tab_centrar">ID Usuario Intermediario</th>
-                    <th scope="col" class="tab_centrar">RFC</th>
-                    <th scope="col" class="tab_centrar">Nombre</th>
+                    <th scope="col" class="tab_centrar">ID
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
+                    <th scope="col" class="tab_centrar">Estatus
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">Laboratorio
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">ID Usuario Intermediario
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">Usuario Intermediario
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">RFC
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">Nombre
+                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
                     <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
                 </tr>
             </thead>
@@ -36,6 +51,16 @@
                 $statement->execute();
                 $i=1;
                 while ($ret=$statement->fetch()){
+                    $stint=$connectionPDO->prepare("SELECT Nombres,ApPaterno,ApMaterno FROM {$tbl_clinter} WHERE IdusuarioIntermediario=:idi LIMIT 1;");
+                    $stint->bindParam(':idi', $ret[3], PDO::PARAM_INT);
+                    $stint->setFetchMode(PDO::FETCH_NUM);
+                    $stint->execute();
+                    $rowint=$stint->rowCount();
+                    if($rowint>0){
+                        while ($rs=$stint->fetch()){
+                            $nameinter=$rs[0]." ".$rs[1]." ".$rs[2];
+                        }                        
+                    }
                     switch ($ret[1]){
                         case 0:
                         $status='<span class="label label-danger">No Activo</span>';
@@ -49,6 +74,7 @@
                 <td class="tab_centrar">'.$status.'</td>
                 <td class="tab_centrar">'.$ret[2].'</td>
                 <td class="tab_centrar">'.$ret[3].'</td>
+                <td class="tab_centrar">'.$nameinter.'</td>
                 <td class="tab_centrar">'.$ret[4].'</td>
                 <td class="tab_centrar">'.$ret[5].'</td>
                 <td class="tab_centrar hidden">'. date('d-m-Y',strtotime($ret[6])).'</td>

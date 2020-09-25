@@ -2,10 +2,10 @@
 	<section class="sidebar">
 		<div class="user-panel">
 			<div class="pull-left image">
-				<img src="../fotos/<?php	echo $id;	?>.png" class="img-circle" alt="User Image">
+				<img src="../fotos/<?php	echo $_SESSION["idus"];	?>.png" class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
-				<p><?php	echo $nom;	?></p>
+				<p><?php	echo $_SESSION["nmus"];	?></p>
 				<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 			</div>
 		</div>

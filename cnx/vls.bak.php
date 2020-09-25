@@ -34,3 +34,4 @@ $tbl_cli = $tbl_prefix."clientes";
 $tbl_dtcli = $tbl_prefix."detcli";
 $tbl_user = $tbl_prefix."usuario";
 $tbl_users = $tbl_prefix."usuarios";
+$tbl_tpus = $tbl_prefix."userstype";

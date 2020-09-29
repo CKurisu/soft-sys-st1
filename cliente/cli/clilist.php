@@ -3,27 +3,20 @@
         <table class="table table-bordered table-hover" id="t-cli">
             <thead>
                 <tr class="tab_tr">
-                    <th scope="col" class="tab_centrar">ID
-                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
-                    <th scope="col" class="tab_centrar">Estatus
-                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <th scope="col" class="tab_centrar">ID</th>
+                    <th scope="col" class="tab_centrar">Estatus</th>
                     <th scope="col" class="tab_centrar">Laboratorio
                     <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
-                    <th scope="col" class="tab_centrar">ID Usuario Intermediario
-                    <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
                     <th scope="col" class="tab_centrar">Usuario Intermediario
                     <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
                     <th scope="col" class="tab_centrar">RFC
                     <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
-                    <th scope="col" class="tab_centrar">Nombre
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
+                    <th scope="col" class="tab_centrar">Nombre Cliente
                     <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
-                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th></th>
+                    <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
                     <th scope="col" class="tab_centrar" colspan="3">&nbsp;</th>
                 </tr>
             </thead>
@@ -73,7 +66,6 @@
                 <td class="tab_centrar">'.$ret[0].'</td>
                 <td class="tab_centrar">'.$status.'</td>
                 <td class="tab_centrar">'.$ret[2].'</td>
-                <td class="tab_centrar">'.$ret[3].'</td>
                 <td class="tab_centrar">'.$nameinter.'</td>
                 <td class="tab_centrar">'.$ret[4].'</td>
                 <td class="tab_centrar">'.$ret[5].'</td>

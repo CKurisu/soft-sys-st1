@@ -37,7 +37,6 @@ try {
                                 <th scope="col" class="tab_centrar">Estado</th>
                                 <th scope="col" class="tab_centrar">Status</th>
                                 <th scope="col" class="tab_centrar">Direccion</th>
-                                <th scope="col" class="tab_centrar">Puntos de Muestreo</th>
                             </tr>
                         </thead>
                         <tbody>

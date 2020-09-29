@@ -1,6 +1,6 @@
 <?php	
 session_start();
-	include("../cnx.php");
+	include("../cnx/cnx.php");
 	$sag=cnx();
 	
 	$id = $_SESSION['usuario'];
@@ -60,6 +60,7 @@ session_start();
                 <tr class="tab_tr">
                     <th scope="col" class="tab_centrar">Estatus</th>
                     <th scope="col" class="tab_centrar">RFC</th>
+                    <th scope="col" class="tab_centrar">Direccio&oacute;n</th>
                     <th scope="col" class="tab_centrar">Direccion Informe / Cotizacion</th>
                     <th scope="col" class="tab_centrar">Puntos De Muestreo</th>
                 </tr>

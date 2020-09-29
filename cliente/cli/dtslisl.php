@@ -8,8 +8,7 @@
         <div id="info-dtls-u"></div>
     </div>
     <div class="modal-footer">
-        <a href="reportes-siralab.php"><button class="btn azul"><i class="fas fa-info"></i> Reporte SirLab</button></a>
-        <button data-toggle="modal" data-target="#ReporteSirLab" class="btn-rpt-slb btn azul" data-id=""><i class="fas fa-info"></i> Reporte SirLab Modal</button>
+        <a href="reportes-siralab.php"><button class="btn azul"><i class="fas fa-info"></i> Puntos de Muestreo</button></a>
         <button type="button" class="btn-to-back-div btn btn-warning"><span><i class="fas fa-times"></i> Cancelar</span></button>
     </div>
 </div>

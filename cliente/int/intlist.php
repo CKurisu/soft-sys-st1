@@ -4,8 +4,12 @@
                     <thead>
                         <tr class="tab_tr">
                             <th scope="col" class="tab_centrar">ID Usuario Intermedio</th>
-                            <th scope="col" class="tab_centrar">Laboratorio</th>
-                            <th scope="col" class="tab_centrar">Nombre</th>
+                            <th scope="col" class="tab_centrar">Laboratorio
+                                <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                                <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
+                            <th scope="col" class="tab_centrar">Nombre
+                                <input type="text" name="filterin" id="filterin" class="form-control" placeholder="Buscar..." required/>
+                                <button class="fil-list-src btn btn-primary btn-tbl" type="button"><i class="fas fa-filter"></i> Filtrar</button></th>
                             <th scope="col" class="tab_centrar">Correo</th>
                             <th scope="col" class="tab_centrar">Direcci&oacute;n</th>
                             <th scope="col" class="tab_centrar">Telefono(s)</th>

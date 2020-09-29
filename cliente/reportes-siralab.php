@@ -1,5 +1,5 @@
 <?php	session_start();
-include("../cnx.php");
+include("../cnx/cnx.php");
 	$sag=cnx();
 	
 	$id = $_SESSION['usuario'];

@@ -14,8 +14,8 @@
 			<li class="header">MENU</li>
 			<li class="treeview">
 				<a href="#">
-					<i class="fa fa-mortar-board"></i><span>&ensp;Administraci&oacute;n del Sistema</span>
-					<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					<i class="fa fa-mortar-board"></i> <span>&ensp;Administraci&oacute;n del Sistema</span>
+					 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 				</a>
 				<ul class="treeview-menu">
                                     <li><a href="administrativo/index.php?tp=1"><i class="fa fa-list-alt"></i> Administraci&oacute;n de Usuarios </a></li>
@@ -23,8 +23,15 @@
                                             <a><i class="fa fa-group"></i> Administraci&oacute;n de Clientes 
 						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
 						<ul class="treeview-menu">
-                                                    <li><a href="../cliente/clientes-inter.php"><i class="fa fa-group"></i> Intermediarios </a></li>
-                                                    <li><a href="../cliente/clientes.php"><i class="fa fa-group"></i> Clientes </a></li>
+                                                    <li><a href="../cliente/clientes-inter.php"><i class="fa fa-group"></i> Intermediarios </a>
+                                                        
+                                                    </li>
+                                                    <li class="treeview">
+                                                        <a href="../cliente/clientes.php"><i class="fa fa-group"></i> Clientes <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                                        <ul class="treeview-menu">
+                                                            <li><a href="../cliente/detail.client.php"><i class="fa fa-group"></i> Historia de Regstro</a></li>
+                                                        </ul>
+                                                    </li>
 						</ul>
 					</li>
 					  

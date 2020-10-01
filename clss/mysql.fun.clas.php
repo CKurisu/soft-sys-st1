@@ -1,12 +1,5 @@
 <?php
-class mysqlfunctions {
-    private $firskey,$secondkey,$thirdkey;
-    public function __construct(){
-        //$this->firskey=base64_encode(openssl_random_pseudo_bytes(32));
-        //$this->secondkey=base64_encode(openssl_random_pseudo_bytes(64));
-        $this->firskey='yVnfm45Ovz3Wa24BduGpa/65f8ic+4Ra1JNxnzLr/YE=';
-        $this->secondkey='rUzIwcF/ysZhOuCl2YKPFYOA2dXkHjTJXSxdEe3U2Me1fCEHcz9TgfT09GpH6kSBZpxpAvFbljz9T0q7f9lIhA==';
-        $this->thirdkey='MIIFzzCCA7egAwIBAgIUDVU43JoYmyUZML3GnMYxi60ya84wDQYJKoZIhvcNAQEN
+class mysqlfunctions{ private $firskey,$secondkey,$thirdkey; public function __construct(){$this->firskey='yVnfm45Ovz3Wa24BduGpa/65f8ic+4Ra1JNxnzLr/YE=';$this->secondkey='rUzIwcF/ysZhOuCl2YKPFYOA2dXkHjTJXSxdEe3U2Me1fCEHcz9TgfT09GpH6kSBZpxpAvFbljz9T0q7f9lIhA==';$this->thirdkey='MIIFzzCCA7egAwIBAgIUDVU43JoYmyUZML3GnMYxi60ya84wDQYJKoZIhvcNAQEN
 BQAwdDELMAkGA1UEBhMCTVgxDzANBgNVBAgMBlB1ZWJsYTEPMA0GA1UEBwwGUHVl
 YmxhMRQwEgYDVQQKDAtXZWIgRGV2ZWxvcDEZMBcGA1UECwwQU29mdFN5c3RlbSwg
 THRkLjESMBAGA1UEAwwJbG9jYWxob3N0MB4XDTIwMDkyNDE1MzI0OFoXDTMwMDky
@@ -37,57 +30,4 @@ bIT8vfk5r4ruISSqHRItGjvE1EuT/4CN0MLoljn3bZTyKzjgpQDkTBTimaUhE8Ox
 CDnrDHoxhF5xNfVrZRVgAkDP1RDy/3BmnEoIsHSfzmWCrDJi4b3fpkJwFZppXraY
 3kyvrz089t5ceUwG9igbH6QDYMrJT9ShfHnONz4/5x1d1ombrDcxMjUhTEY116sj
 LlkRKzqwgEvqhc+ZXlMPCCymdXhkmjfoESZQZJ/vzRgZGxsiDjTD6Ns5sOOvqg7L
-tagL';
-    }
-    
-    public function hashpasswordsha1($password) {
-        return sha1($password);
-    }
-    public function securedEncrypt($param){
-        try{
-        $key=$this->thirdkey;
-        $plaintext = $param;
-        $ivlen = openssl_cipher_iv_length($cipher="AES-256-CBC");
-        $iv = openssl_random_pseudo_bytes($ivlen);
-        $ciphertext_raw = openssl_encrypt($plaintext, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
-        $hmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
-        $ciphertext = base64_encode( $iv.$hmac.$ciphertext_raw );
-        return $ciphertext;} catch (Exception $ex){    return $ex->getMessage();}
-    }
-    
-    public function securedDecrypt($param){
-        try{
-        $key=$this->thirdkey;
-        $c = base64_decode($param);
-        $ivlen = openssl_cipher_iv_length($cipher="AES-256-CBC");
-        $iv = substr($c, 0, $ivlen);
-        $hmac = substr($c, $ivlen, $sha2len=32);
-        $ciphertext_raw = substr($c, $ivlen+$sha2len);
-        $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
-        $calcmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
-        if (hash_equals($hmac, $calcmac)){
-            return $original_plaintext;}
-        } catch (Exception $ex){            return $ex->getMessage();}
-    }
-    
-    public function securedEncryptBase($param){
-        try{
-        $publickey = "file://". dirname(dirname(__FILE__))."/ssl/sislab.pem";
-        openssl_public_encrypt($param, $encrypt, $publickey);
-        $encrypt64 = base64_encode($encrypt);
-        return $encrypt64;} catch (Exception $ex){    return $ex->getMessage();}
-    }
-    
-    public function securedDecryptBase($param){
-        try{
-            $fp=fopen("../ssl/sislabkey.pem","r");
-            $privatekey = fread($fp,8192);
-            fclose($fp);
-            $encrypt= base64_decode($param);
-            $res = openssl_get_privatekey($privatekey,"labsis");
-            openssl_private_decrypt($encrypt, $decrypt, $res);
-            $decrypt = $decrypt;
-            return $decrypt;
-        } catch (Exception $ex){            return $ex->getMessage();}
-    }
-}
+tagL';} public function hashpasswordsha1($password){return sha1($password);} public function securedEncrypt($param){try{$key=$this->thirdkey;$plaintext=$param;$ivlen=openssl_cipher_iv_length($cipher="AES-256-CBC");$iv=openssl_random_pseudo_bytes($ivlen);$ciphertext_raw=openssl_encrypt($plaintext,$cipher,$key,$options=OPENSSL_RAW_DATA,$iv);$hmac=hash_hmac('sha256',$ciphertext_raw,$key,$as_binary=true);$ciphertext=base64_encode($iv.$hmac.$ciphertext_raw);return $ciphertext;}catch(Exception$ex){return $ex->getMessage();}} public function securedDecrypt($param){try{$key=$this->thirdkey;$c=base64_decode($param);$ivlen=openssl_cipher_iv_length($cipher="AES-256-CBC");$iv=substr($c,0,$ivlen);$hmac=substr($c,$ivlen,$sha2len=32);$ciphertext_raw=substr($c,$ivlen+$sha2len);$original_plaintext=openssl_decrypt($ciphertext_raw,$cipher,$key,$options=OPENSSL_RAW_DATA,$iv);$calcmac=hash_hmac('sha256',$ciphertext_raw,$key,$as_binary=true);if(hash_equals($hmac,$calcmac)){return $original_plaintext;}}catch(Exception$ex){return $ex->getMessage();}} public function securedEncryptBase($param){try{$publickey="file://".dirname(dirname(__FILE__))."/ssl/sislab.pem";openssl_public_encrypt($param,$encrypt,$publickey);$encrypt64=base64_encode($encrypt);return $encrypt64;}catch(Exception$ex){return $ex->getMessage();}} public function securedDecryptBase($param){try{$fp=fopen("../ssl/sislabkey.pem","r");$privatekey=fread($fp,8192);fclose($fp);$encrypt=base64_decode($param);$res=openssl_get_privatekey($privatekey,"labsis");openssl_private_decrypt($encrypt,$decrypt,$res);$decrypt=$decrypt;return $decrypt;}catch(Exception$ex){return $ex->getMessage();}}}

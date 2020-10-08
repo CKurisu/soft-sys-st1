@@ -96,7 +96,7 @@ if($rowu>0){
                     </center>
                 </section>
                 <!----------     TITULO     ---------->
-                <?php require './cli/clilist.php';?>
+                <?php include './cli/clilist.php';?>
             </div>	
             <!----------     AQUI TERMINA LA P�GINA
             ********************************************************
@@ -105,14 +105,14 @@ if($rowu>0){
             </footer>
             <!----------     AQUI TERMINA LA PIECERA     ---------->
         
-        <?php require './cli/frmregm.php';?>
-        <?php require './cli/frmregsh.php';?>
-        <?php require './cli/frmregsn.php';?>
-        <?php require './cli/cliinf.php';?>
-        <?php require './cli/clistgs.php';?>
-        <?php require './cli/clidlt.php';?>
-        <?php require './cli/dtcli.php';?>
-        <?php require './cli/dtslisl.php';?>
+        <?php include './cli/frmregm.php';?>
+        <?php include './cli/frmregsh.php';?>
+        <?php include './cli/frmregsn.php';?>
+        <?php include './cli/cliinf.php';?>
+        <?php include './cli/clistgs.php';?>
+        <?php include './cli/clidlt.php';?>
+        <?php include './cli/dtcli.php';?>
+        <?php include './cli/dtslisl.php';?>
             </div>
         <?php	include("../head_menu_js.php");	?>
     </body>

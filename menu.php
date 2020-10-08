@@ -18,7 +18,7 @@
 					 <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
 				</a>
 				<ul class="treeview-menu">
-                                    <li><a href="administrativo/index.php?tp=1"><i class="fa fa-list-alt"></i> Administraci&oacute;n de Usuarios </a></li>
+                                    <li><a href="../administrativo/index.php?tp=1"><i class="fa fa-list-alt"></i> Administraci&oacute;n de Usuarios </a></li>
 					<li class="treeview">
                                             <a><i class="fa fa-group"></i> Administraci&oacute;n de Clientes 
 						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
@@ -27,8 +27,10 @@
                                                         
                                                     </li>
                                                     <li class="treeview">
-                                                        <a href="../cliente/clientes.php"><i class="fa fa-group"></i> Clientes <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                                                        <a><i class="fa fa-group"></i> Clientes
+                                                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                                                         <ul class="treeview-menu">
+                                                            <li><a href="../cliente/clientes.php"><i class="fa fa-group"></i> Clientes </a></li>
                                                             <li><a href="../cliente/detail.client.php"><i class="fa fa-group"></i> Historia de Regstro</a></li>
                                                         </ul>
                                                     </li>

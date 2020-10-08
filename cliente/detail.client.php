@@ -38,7 +38,14 @@ if($rowu>0){
             ********************************************************
             AQUI COMIENZA LA P�GINA     ---------->
             <div class="content-wrapper" id="tabledata">
-                <?php require './cli/cliinf.php';?>
+                <!----------     TITULO     ---------->
+                <section class="content-header">
+                    <center class="titulo">
+                        Historia de Rgeistro de Clientes
+                    </center>
+                </section>
+                <!----------     TITULO     ---------->
+                <?php include './cli.dtl/cli.dtl.list.php';?>
             </div>	
             <!----------     AQUI TERMINA LA P�GINA
             ********************************************************

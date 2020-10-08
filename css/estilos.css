@@ -92,6 +92,7 @@ body
 /**********************************************/
 /***************     TABLAS     ***************/
 /**********************************************/
+.tab_td > td{ text-align: center !important;	background: #ffffff;	}
 .tab_td{ text-align: center !important;	background: #ffffff;	}
 .tab_td:hover{	background: #ced8e4;	}
 .tab_centrar{	text-align: center;		}
@@ -99,7 +100,14 @@ body
 {
 	border:1px  #000000 solid;
 	background: #273444;
-	text-align: center;
+	text-align: center !important;
+	color: #ffffff;
+}
+.tab_tr > th
+{
+	border:1px  #000000 solid;
+	background: #273444;
+	text-align: center !important;
 	color: #ffffff;
 }
 .titulo

@@ -38,7 +38,7 @@ if($rowu>0){
             <!----------     AQUI TERMINA EL MENU
             ********************************************************
             AQUI COMIENZA LA P�GINA     ---------->
-            <div class="content-wrapper">
+            <div class="content-wrapper" id="tabledata">
                 <!----------     TITULO     ---------->
                 <section class="content-header">
                     <center class="titulo">
@@ -58,11 +58,12 @@ if($rowu>0){
 			</footer>
 			
 			<!----------     AQUI TERMINA LA PIECERA     ---------->
-		</div>
-                <?php require './int/frmreg.php';?>
-                <?php require'./int/intdtl.php';?>
-                <?php require'./int/intstgs.php'?>
-                <?php require'./int/intdlt.php'?>
+		<?php include'./int/frmreg.php';?>
+                <?php include'./int/intdtl.php';?>
+                <?php include'./int/intstgs.php'?>
+                <?php include'./int/intdlt.php'?>
+        </div>
+                
         
 		<?php	include("../head_menu_js.php");	?>
 	</body>

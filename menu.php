@@ -31,6 +31,7 @@
                                                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                                                         <ul class="treeview-menu">
                                                             <li><a href="../cliente/clientes.php"><i class="fa fa-group"></i> Clientes </a></li>
+                                                            <li><a href="../cliente/reportes-siralab.php"><i class="fa fa-group"></i> Clientes SirLab</a></li>
                                                             <li><a href="../cliente/detail.client.php"><i class="fa fa-group"></i> Historia de Regstro</a></li>
                                                         </ul>
                                                     </li>
